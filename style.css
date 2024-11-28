@@ -64,7 +64,8 @@ header nav a {
 }
 
 /* About Section */
-#about, #projects, #contact {
+/* About Me Section */
+#about {
     max-width: 900px;
     margin: 2rem auto;
     padding: 1rem;
@@ -73,11 +74,25 @@ header nav a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about p {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
 /* Projects Section */
 .project-grid {
     display: grid;
