@@ -260,77 +260,96 @@ section h2 {
     color: #333;
 }
 
-/* About Section */
-#about {
-    max-width: 900px;
+//* About Container: Who I Am Section */
+.about-container {
+    display: flex;
+    gap: 2rem; /* Space between text and image */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    align-items: center;
+    justify-content: center;
     margin: 3rem auto;
+    max-width: 900px;
     padding: 1rem;
 }
 
-.about-container {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
+/* About Text */
 .about-text {
-    flex: 2;
-    font-size: 1rem;
+    flex: 2; /* Take up more space proportionally */
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
 }
 
-.about-text p {
-    margin-bottom: 1.5rem;
-}
-
+/* About Image */
 .about-image {
-    flex: 1;
+    flex: 1; /* Take up less space proportionally */
 }
 
 .about-image img {
     width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
+    max-width: 300px; /* Restrict image size */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     object-fit: cover;
 }
 
-/* About Details Section */
-.about-details {
-    display: flex; /* Arrange coursework and skills side-by-side */
-    justify-content: space-between; /* Space them evenly */
-    align-items: flex-start; /* Align items to the top */
-    gap: 2rem; /* Add spacing between columns */
-    max-width: 900px; /* Restrict the section width */
-    margin: 2rem auto; /* Center it horizontally and add vertical spacing */
+/* About Sections: What I Do and What I Aspire to Do */
+.about-section {
+    max-width: 900px;
+    margin: 2rem auto;
     padding: 1rem;
+    text-align: center;
     background-color: #f9f9f9; /* Optional: Light background for separation */
-    border-radius: 8px; /* Optional: Rounded corners */
+    border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 
-/* Individual Coursework and Skills Columns */
+.about-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* About Details Section: Relevant Coursework and Skills */
+.about-details {
+    display: flex;
+    justify-content: space-between; /* Space coursework and skills evenly */
+    align-items: flex-start; /* Align to the top */
+    gap: 2rem; /* Space between columns */
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
 .coursework, .skills {
-    flex: 1; /* Distribute space equally */
+    flex: 1; /* Equal space for both sections */
 }
 
 .coursework h3, .skills h3 {
-    font-size: 1.5rem; /* Slightly larger font for section titles */
+    font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #333; /* Darker text for section titles */
+    color: #333;
 }
 
 .coursework ul, .skills ul {
-    list-style-type: disc; /* Use bullet points */
+    list-style-type: disc; /* Bullet points */
     padding-left: 1.5rem; /* Indent the list */
-    color: #555; /* Neutral text color */
-    line-height: 1.8; /* Add spacing between list items */
+    color: #555;
+    line-height: 1.8; /* Space between list items */
 }
 
 .coursework ul li, .skills ul li {
-    margin-bottom: 0.5rem; /* Add space between list items */
+    margin-bottom: 0.5rem; /* Space between list items */
 }
-
 
 /* Projects Section */
 #intro2 {
