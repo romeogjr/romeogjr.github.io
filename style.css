@@ -188,7 +188,7 @@ section h2 {
 /* Contact Section */
 #contact {
     text-align: center; /* Center-align text content */
-    max-width: 800px; /* Restrict the width */
+    max-width: 700px; /* Restrict the width */
     margin: 3rem auto; /* Center the section horizontally and add vertical spacing */
     padding: 2rem 1rem; /* Add padding inside the section */
     background-color: #f9f9f9; /* Light gray background */
