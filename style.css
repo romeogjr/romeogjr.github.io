@@ -171,41 +171,39 @@ a:hover {
 
 /* Navigation Bar */
 nav {
-    display: flex;
-    justify-content: space-between; /* Space between "Romeo" and the links */
+    display: flex; /* Flexbox for alignment */
+    justify-content: flex-start; /* Align items to the left */
     align-items: center;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 1rem 3rem; /* Increase padding for more space around the nav */
+    background-color: #fff; /* Adjust background as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
 }
 
+/* Navigation Logo */
 .nav-logo {
-    font-size: 2.3rem; /* Larger font size for visibility */
-    font-weight: bold; /* Normal font weight */
-    color: #355E3B;
-    letter-spacing: 0.05rem; /* Add spacing between letters */
-    margin-left: 5 rem; /* Remove any unintended margin */
-    
+    font-size: 1.8rem; /* Adjust size if necessary */
+    font-weight: bold;
+    color: #355E3B; /* Hunter green */
+    margin-left: 2rem; /* Increase left margin to push it farther right */
+    cursor: pointer; /* Makes the logo clickable */
 }
 
+/* Navigation Links */
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2rem; /* Spacing between links */
+    margin-left: auto; /* Push links to the far right */
 }
 
 .nav-links a {
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: 500;
     text-decoration: none;
+    font-size: 1.2rem;
+    color: #555; /* Link color */
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #007acc;
+    color: #355E3B; /* Hunter green on hover */
 }
 
 /* Header Styling */
