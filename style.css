@@ -39,6 +39,7 @@ nav {
     font-size: 3.0rem;
     font-weight: normal;
     color: #333;
+    letter-spacing: 0.1rem; 
 }
 
 .nav-links {
