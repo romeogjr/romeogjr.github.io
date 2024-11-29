@@ -533,3 +533,21 @@ footer {
     background-color: #f9f9f9;
     margin-top: 2rem;
 }
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start; /* Align logo and links to the left */
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .nav-logo {
+        margin-left: 1rem; /* Reduce left margin */
+    }
+
+    .nav-links {
+        margin-left: 0; /* Reset auto margin for better alignment */
+        gap: 1rem; /* Reduce link spacing */
+    }
+}
