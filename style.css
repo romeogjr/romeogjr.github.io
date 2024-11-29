@@ -3,9 +3,9 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.8;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #fdfdfd;
 }
 
 h1, h2, h3 {
@@ -25,15 +25,17 @@ a:hover {
 
 /* Header Styling */
 header {
-    height: 200px; /* Height of the header */
+    height: 180px; /* Header height */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* Home Page Header */
@@ -63,88 +65,104 @@ body.contact-page header {
 
 /* Navigation Bar */
 nav {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
 }
 
 nav a {
-    color: white;
-    font-weight: bold;
-    margin: 0 1rem;
-    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #007acc;
 }
 
 /* Section Styling */
 section {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1rem;
+    max-width: 800px;
+    margin: 6rem auto 3rem auto; /* Added top margin to account for fixed nav */
+    padding: 1.5rem;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Hero Section (Home Page Only) */
-#hero {
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
     text-align: center;
-    margin-top: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
 }
 
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-#hero p {
-    font-size: 1.2rem;
+section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: justify;
 }
 
 /* About Section */
 .about-content {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-#about p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+.about-content p {
+    flex: 1;
 }
 
 .profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Circular image */
+    width: 100px; /* Smaller size for minimalist look */
+    height: 100px;
+    border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Projects Section */
 #projects ul {
-    list-style-type: disc;
-    margin-left: 2rem;
+    list-style: none; /* Remove bullets for minimalist look */
     padding-left: 0;
+    margin: 0;
 }
 
 #projects li {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#projects li:hover {
+    background: #f1f1f1;
 }
 
 /* Resume Section */
 .resume-link {
     display: inline-block;
     margin-top: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     background-color: #007acc;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s ease;
 }
 
 .resume-link:hover {
@@ -152,16 +170,25 @@ section {
 }
 
 /* Contact Section */
-#contact p {
+#contact {
     text-align: center;
+}
+
+#contact p {
     font-size: 1.1rem;
+}
+
+#contact a {
+    color: #007acc;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #333;
-    color: #fff;
-    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+    background-color: #f9f9f9;
+    margin-top: 3rem;
+    border-top: 1px solid #eee;
 }
