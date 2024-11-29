@@ -96,22 +96,24 @@ a:hover {
     max-width: 100%;
     margin: 0 auto; /* Center the grid on the page */
 }
-
 .project-tile {
-    width: 100%; /* Ensure it takes the full grid column width */
-    height: 260px; /* Fixed height for consistency */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Ensure block-level element for layout */
+    position: relative; /* Allow for precise positioning */
     border-radius: 15px; /* Rounded corners */
-    background-color: #555; /* Fallback background */
+    overflow: hidden; /* Clip any overflowing content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Default shadow */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: box-shadow 0.3s ease; /* Smooth shadow change */
 }
 
 .project-tile:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+    transform: translateY(-5px); /* Move the tile up slightly */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Add a larger shadow */
+    text-decoration: none; /* Ensure no underline appears on hover */
 }
+
+
 
 .project-image {
     width: 100%; /* Fill the tile width */
