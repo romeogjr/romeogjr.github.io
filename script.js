@@ -11,12 +11,14 @@ setInterval(() => {
 }, 20);
 
 
-function toggleDropdown(id) {
-    const dropdown = document.getElementById(id);
+function toggleDropdown(dropdownId, buttonElement) {
+    const dropdown = document.getElementById(dropdownId);
     if (dropdown.style.display === "block") {
-        dropdown.style.display = "none"; // Hide the dropdown if it's visible
+        dropdown.style.display = "none";
+        buttonElement.setAttribute("aria-expanded", "false");
     } else {
-        dropdown.style.display = "block"; // Show the dropdown if it's hidden
+        dropdown.style.display = "block";
+        buttonElement.setAttribute("aria-expanded", "true");
     }
 }
 
@@ -47,13 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollCarousel(); // Start scrolling
 });
 
-
-// Function to get URL parameters
-function getQueryParams(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
-
 // Function to open the dropdown for a specific project
 function openProjectDropdown(projectId) {
     const dropdownId = `dropdown${projectId}`;
@@ -63,12 +58,21 @@ function openProjectDropdown(projectId) {
     }
 }
 
-// On page load, check for the project parameter
+// Function to get query parameters
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Auto-expand and scroll to a project on page load
 window.onload = () => {
-    const project = getQueryParams('project');
-    if (project) {
-        openProjectDropdown(project); // Open the specific project dropdown
-        // Optionally, scroll to the project section
-        document.getElementById(`dropdown${project}`).scrollIntoView({ behavior: "smooth" });
+    const projectId = getQueryParam("project");
+    if (projectId) {
+        const dropdownId = `dropdown${projectId}`;
+        const buttonElement = document.querySelector(`[onclick="toggleDropdown('${dropdownId}', this)"]`);
+        if (buttonElement) {
+            toggleDropdown(dropdownId, buttonElement); // Expand the dropdown
+            document.getElementById(dropdownId).scrollIntoView({ behavior: "smooth" }); // Scroll to the dropdown
+        }
     }
 };
