@@ -353,7 +353,7 @@ section h2 {
 .dropdown-btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #007acc;
+    background-color: #355E3B;
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
@@ -364,7 +364,7 @@ section h2 {
 }
 
 .dropdown-btn:hover {
-    background-color: #005f99;
+    background-color: #2A4730;
 }
 
 /* Dropdown Content */
@@ -413,8 +413,8 @@ section h2 {
 .btn-download {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: #fff; /* Hunter green color */
-    color: #355E3B;
+    background-color: #355E3B; /* Hunter green color */
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
@@ -499,8 +499,8 @@ section h2 {
 /* Submit Button */
 .btn-submit {
     padding: 0.75rem 2rem;
-    background-color: #fff;
-    color: #355E3B;
+    background-color: #355E3B;
+    color: #ff;
     font-size: 1.1rem;
     font-weight: bold;
     border: none;
