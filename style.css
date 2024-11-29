@@ -300,19 +300,19 @@ section h2 {
 
 /* Projects Section */
 #projects-list {
-    max-width: 75%;
+    max-width: 90%; /* Increased overall width to use more screen space */
     margin: 2rem auto;
     padding: 1rem;
 }
 
 /* Each Project Container */
 .project {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem; /* Vertical spacing between projects */
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 2rem; /* Padding inside each project block */
     background-color: #f9f9f9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for focus */
 }
 
 /* Project Header: Info and Image Side by Side */
@@ -320,29 +320,31 @@ section h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    flex-wrap: wrap; /* Wrap elements on smaller screens */
 }
 
 /* Project Info */
 .project-info {
-    flex: 1;
+    flex: 1; /* Allow the text to take more space proportionally */
+    min-width: 350px; /* Ensure the text has enough space */
 }
 
 .project-info h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem; /* Larger title font size */
+    margin-bottom: 1rem;
 }
 
 .project-info p {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Larger paragraph font size */
     color: #555;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Dropdown Button */
 .dropdown-btn {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem; /* Larger button size */
     background-color: #355E3B; /* Hunter green */
     color: #fff; /* White text */
     font-size: 1rem;
@@ -359,26 +361,26 @@ section h2 {
 
 /* Circular Image */
 .project-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Makes the image a circle */
-    object-fit: cover;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0; /* Prevents shrinking */
+    width: 300px; /* Increased size for larger images */
+    height: 300px;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Maintain aspect ratio */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+    flex-shrink: 0; /* Prevent image shrinking */
 }
 
 /* Dropdown Content */
 .dropdown-content {
     display: none; /* Hidden by default */
-    margin-top: 1rem;
-    padding: 1rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
     border-top: 1px solid #ddd;
     background-color: #fff;
 }
 
 .dropdown-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.4rem; /* Slightly larger subheading */
+    margin-bottom: 1rem;
 }
 
 .dropdown-content ul {
@@ -388,7 +390,7 @@ section h2 {
 }
 
 .dropdown-content p, .dropdown-content ul {
-    margin: 0.5rem 0;
+    margin: 0.75rem 0; /* More space between items */
 }
 
 /* Resume Section */
