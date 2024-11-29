@@ -400,6 +400,25 @@ section h2 {
     margin: 0.75rem 0; /* More space between items */
 }
 
+
+/* Image Section in Dropdown */
+.dropdown-images {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    flex: 1; /* Allocate space to the image section */
+    gap: 1rem; /* Add space between images */
+    align-items: center; /* Center-align the images */
+}
+
+/* Individual Dropdown Images */
+.dropdown-image {
+    width: 100px; /* Adjust width */
+    height: 100px; /* Adjust height */
+    object-fit: cover; /* Maintain image proportions */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+}
+
 /* Resume Section */
 #resume {
     text-align: center; /* Center the entire section */
