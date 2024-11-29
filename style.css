@@ -187,17 +187,17 @@ nav {
     font-weight: bold; /* Normal font weight */
     color: #355E3B;
     letter-spacing: 0.05rem; /* Add spacing between letters */
-    margin-left: 1.5 rem; /* Remove any unintended margin */
+    margin-left: 3 rem; /* Remove any unintended margin */
     padding: 0; /* Ensure no padding around the logo */
 }
 
 .nav-links {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .nav-links a {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #333;
     font-weight: 700;
     text-decoration: none;
