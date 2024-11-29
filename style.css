@@ -113,19 +113,18 @@ a:hover {
 
 /* Project Image */
 .project-image {
-    width: 100%; /* Full width of the grid cell */
-    height: 150px; /* Adjust the height to make it rectangular */
-    border-radius: 12px; /* Slightly rounded corners */
-    object-fit: cover; /* Ensure content fits well inside the rectangle */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+    width: 300px; /* Set the width to make it larger */
+    height: 200px; /* Set the height to make it a rectangle */
+    border-radius: 15px; /* Slightly round the corners */
+    background-color: #555; /* Fallback background color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #555; /* Fallback background color */
-    color: #fff; /* Text color for project titles */
-    font-size: 1.2rem; /* Adjust font size for visibility */
-    text-align: center; /* Center-align text inside */
-    margin: 0 auto; /* Center each rectangle in its grid cell */
+    color: #fff; /* Text color for titles */
+    font-size: 1.5rem; /* Larger font for better visibility */
+    text-align: center;
+    margin: 0 auto; /* Center the rectangle within the grid */
 }
 
 /* Project Title */
@@ -146,10 +145,12 @@ a:hover {
 }
 
 .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two projects per row */
+    gap: 2rem; /* Add spacing between rows and columns */
+    justify-content: center; /* Center the grid on the page */
+    max-width: 800px; /* Optional: Restrict the overall width */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 .project-card {
