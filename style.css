@@ -300,11 +300,12 @@ section h2 {
 
 /* Projects Section */
 #projects-list {
-    max-width: 800px;
+    max-width: 900px;
     margin: 2rem auto;
     padding: 1rem;
 }
 
+/* Each Project Container */
 .project {
     margin-bottom: 2rem;
     border: 1px solid #ddd;
@@ -314,11 +315,41 @@ section h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.project h2 {
+/* Project Header: Image + Info Side by Side */
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Project Image */
+.project-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Info */
+.project-info {
+    flex: 1;
+}
+
+/* Project Title */
+.project-info h2 {
     font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Short Paragraph */
+.project-info p {
+    font-size: 1rem;
+    color: #555;
     margin-bottom: 1rem;
 }
 
+/* Dropdown Button */
 .dropdown-btn {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -336,6 +367,7 @@ section h2 {
     background-color: #005f99;
 }
 
+/* Dropdown Content */
 .dropdown-content {
     display: none; /* Hidden by default */
     margin-top: 1rem;
