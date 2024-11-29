@@ -269,6 +269,27 @@ section h2 {
 }
 
 /* About Section */
+#about-header {
+    position: relative;
+    width: 100%; /* Full width */
+    height: 300px; /* Adjust height as needed */
+    background-image: url('images/about-bg.jpg'); /* Replace with your background image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    color: white; /* White text for contrast */
+    text-align: center; /* Center-align text */
+}
+
+/* Title Styling */
+#about-header h1 {
+    font-size: 3rem; /* Adjust size as needed */
+    font-weight: bold;
+    margin: 0; /* Remove default margins */
+}
+
 #about {
     max-width: 900px;
     margin: 3rem auto;
