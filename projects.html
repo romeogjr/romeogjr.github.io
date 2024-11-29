@@ -8,26 +8,85 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="projects-page">
-    <header>
-        <nav>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-logo">Romeo</div>
+        <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="resume.html">Resume</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>
-        </nav>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>My Projects</h1>
+        <p>Explore some of the projects I've worked on and the skills I've developed along the way.</p>
     </header>
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>Banana Launcher:</strong> Built a mass-efficient, motor-powered slingshot capable of producing 100N of force.</li>
-            <li><strong>Stackable Shoe Storage:</strong> Used generative design to create a single-print (on an Ender 3) custom shoe storage solution.</li>
-            <li><strong>Autonomous Navigation Robot:</strong> Designed an ultrasonic, Arduino-powered robot; developed CAD models, 3D prints, and state diagrams.</li>
-            <li><strong>CNC Manufacturing:</strong> Designed and CNC-manufactured a Tron-inspired bottle opener and an ice press using Fusion 360’s Form tools.</li>
-        </ul>
+
+    <!-- Projects Section -->
+    <section id="projects-list">
+        <!-- Loop through 16 projects -->
+        <!-- Replace placeholders with your project details -->
+        <div class="project">
+            <h2>Project 1: Autonomous Navigation Robot</h2>
+            <button class="dropdown-btn" onclick="toggleDropdown('dropdown1')">Learn More</button>
+            <div id="dropdown1" class="dropdown-content">
+                <h3>What I Learned</h3>
+                <p>Developed expertise in robotic navigation systems, CAD modeling, and 3D printing.</p>
+                <h3>Skills I Used</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>Arduino</li>
+                    <li>3D Design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Project 2: CNC Manufacturing - Bottle Opener</h2>
+            <button class="dropdown-btn" onclick="toggleDropdown('dropdown2')">Learn More</button>
+            <div id="dropdown2" class="dropdown-content">
+                <h3>What I Learned</h3>
+                <p>Gained experience with CNC machining, manufacturing techniques, and product design.</p>
+                <h3>Skills I Used</h3>
+                <ul>
+                    <li>Fusion 360</li>
+                    <li>CNC Programming</li>
+                    <li>FEA (Finite Element Analysis)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Continue duplicating the structure for projects 3 to 16 -->
+        <!-- Use unique dropdown IDs for each project -->
+
+        <!-- Example of Project 3 -->
+        <div class="project">
+            <h2>Project 3: Banana Launcher</h2>
+            <button class="dropdown-btn" onclick="toggleDropdown('dropdown3')">Learn More</button>
+            <div id="dropdown3" class="dropdown-content">
+                <h3>What I Learned</h3>
+                <p>Mastered iterative prototyping to optimize performance for creative engineering challenges.</p>
+                <h3>Skills I Used</h3>
+                <ul>
+                    <li>3D Printing</li>
+                    <li>Arduino</li>
+                    <li>MATLAB</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Continue until Project 16 -->
     </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Romeo Garcia Jr. | All rights reserved</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
