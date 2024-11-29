@@ -305,6 +305,7 @@ section h2 {
 
 /* Projects Section */
 /* Header Section with Background Image */
+/* Header Section with Background Image */
 #projects-header {
     position: relative;
     width: 100%; /* Full width */
@@ -313,23 +314,18 @@ section h2 {
     background-size: cover; /* Make the image cover the entire area */
     background-position: center; /* Center the image */
     display: flex;
-    align-items: center; /* Vertically center the text */
-    justify-content: center; /* Horizontally center the text */
+    flex-direction: column; /* Stack the title and paragraph vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
     color: white; /* White text for contrast */
+    text-align: center; /* Center the text */
 }
 
-/* Overlay for Styling Text on Top */
-.header-overlay {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay for better readability */
-    padding: 1rem 2rem;
-    border-radius: 8px; /* Rounded edges for the overlay */
-}
-
+/* Title Styling */
 #projects-header h1 {
-    font-size: 3rem; /* Larger font for the title */
-    margin-bottom: 1rem;
+    font-size: 3rem; /* Adjust size as needed */
     font-weight: bold;
+    margin: 0; /* Remove default margins */
 }
 
 
