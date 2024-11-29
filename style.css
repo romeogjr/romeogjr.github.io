@@ -264,15 +264,15 @@ section h2 {
 
 /* About Container: Who I Am Section */
 .about-container {
-    display: flex; /* Flexbox for side-by-side layout */
-    justify-content: center; /* Center-align content horizontally */
-    align-items: center; /* Center-align content vertically */
+    display: flex;
+    justify-content: center; /* Center-align text and image */
+    align-items: center; /* Vertically align content */
     gap: 2rem; /* Add space between text and image */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    max-width: 1200px; /* Restrict the width of the container */
-    margin: 0 auto; /* Center the container */
-    padding: 1rem;
-    text-align: center; /* Center text in case of stacking */
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+    max-width: 1200px; /* Restrict width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 2rem;
+    text-align: left; /* Ensure text alignment doesn't force centering */
 }
 
 .about-text {
