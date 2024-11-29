@@ -320,7 +320,7 @@ section h2 {
 .about-details {
     display: flex;
     justify-content: space-between; /* Space coursework and skills evenly */
-    align-items: flex-start; /* Align to the top */
+    align-items: center; /* Align to the top */
     gap: 2rem; /* Space between columns */
     max-width: 900px;
     margin: 2rem auto;
@@ -329,6 +329,7 @@ section h2 {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
+
 
 .coursework, .skills {
     flex: 1; /* Equal space for both sections */
