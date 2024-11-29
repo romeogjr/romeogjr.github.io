@@ -315,20 +315,12 @@ section h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Project Header: Image + Info Side by Side */
+/* Project Header: Info and Image Side by Side */
 .project-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
-}
-
-/* Project Image */
-.project-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Project Info */
@@ -336,13 +328,11 @@ section h2 {
     flex: 1;
 }
 
-/* Project Title */
 .project-info h2 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-/* Short Paragraph */
 .project-info p {
     font-size: 1rem;
     color: #555;
@@ -353,8 +343,8 @@ section h2 {
 .dropdown-btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #355E3B;
-    color: #fff;
+    background-color: #355E3B; /* Hunter green */
+    color: #fff; /* White text */
     font-size: 1rem;
     font-weight: 600;
     border: none;
@@ -364,7 +354,17 @@ section h2 {
 }
 
 .dropdown-btn:hover {
-    background-color: #2A4730;
+    background-color: #2A4730; /* Darker hunter green */
+}
+
+/* Circular Image */
+.project-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image a circle */
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevents shrinking */
 }
 
 /* Dropdown Content */
