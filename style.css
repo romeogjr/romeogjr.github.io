@@ -510,7 +510,6 @@ section h2 {
     height: 175px; /* Adjust height for the message box */
     resize: vertical; /* Allow users to resize it vertically if needed */
     font-size: 1rem; /* Ensure consistent font size */
-    padding: 0.75rem; /* Add padding for better readability */
     border: 1px solid #ddd; /* Optional: Border styling */
     border-radius: 4px; /* Optional: Rounded corners */
     width: 100%; /* Ensure it spans the width of the form */
