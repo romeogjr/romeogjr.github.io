@@ -289,10 +289,15 @@ header {
 }
 
 .about-text {
-    flex: 2;
+    flex: 2; /* Allows it to take up twice as much space compared to the image if in a flex container */
     font-size: 1.2rem;
     line-height: 1.8;
     color: #555;
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    padding: 1.5rem; /* Add padding inside the box */
+    margin: 1rem 0; /* Add vertical spacing above and below */
 }
 
 .about-image {
