@@ -90,7 +90,7 @@ a:hover {
 /* Projects Container */
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two tiles per row */
+    grid-template-columns: repeat(2, 45%); /* Two tiles per row */
     gap: 2rem; /* Space between tiles */
     max-width: 800px;
     margin: 0 auto; /* Center the grid on the page */
@@ -134,7 +134,14 @@ a:hover {
     text-align: center;
     pointer-events: none; /* Prevents hover effects on the title */
 }
+.project-tile h3 a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color from parent */
+}
 
+.project-tile h3 a:hover {
+    text-decoration: none; /* Ensure underline does not appear on hover */
+}
 
 /* Carousel Animation */
 @keyframes scroll {
