@@ -99,7 +99,7 @@ a:hover {
 
 .project-tile {
     width: 100%; /* Ensure it takes the full grid column width */
-    height: 220px; /* Fixed height for consistency */
+    height: 260px; /* Fixed height for consistency */
     border-radius: 15px; /* Rounded corners */
     background-color: #555; /* Fallback background */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Default shadow */
@@ -219,7 +219,7 @@ body.projects-page header {
 
 /* Section Styling */
 section {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 2rem auto;
     padding: 1rem;
     font-size: 1rem;
