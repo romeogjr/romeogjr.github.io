@@ -401,22 +401,22 @@ section h2 {
 }
 
 
-/* Image Section in Dropdown */
+/* Images Section at the Bottom */
 .dropdown-images {
-    display: flex;
-    flex-direction: column; /* Stack images vertically */
-    flex: 1; /* Allocate space to the image section */
-    gap: 1rem; /* Add space between images */
-    align-items: center; /* Center-align the images */
+    display: flex; /* Arrange images horizontally */
+    justify-content: space-evenly; /* Distribute images evenly across the width */
+    align-items: center; /* Center-align images vertically */
+    gap: 1rem; /* Add spacing between images */
+    margin-top: 1rem; /* Space above the images */
 }
 
-/* Individual Dropdown Images */
+/* Individual Images */
 .dropdown-image {
-    width: 100px; /* Adjust width */
-    height: 100px; /* Adjust height */
-    object-fit: cover; /* Maintain image proportions */
+    width: 150px; /* Adjust image width */
+    height: 150px; /* Adjust image height */
+    object-fit: cover; /* Ensure images maintain their aspect ratio */
     border-radius: 8px; /* Optional: Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for better appearance */
 }
 
 /* Resume Section */
