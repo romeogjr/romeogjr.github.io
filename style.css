@@ -114,20 +114,37 @@ section h2 {
 }
 
 /* About Section */
-.about-content {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+#about {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1rem;
 }
 
-.about-content p {
+.about-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-text {
+    flex: 2;
+    font-size: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-image {
     flex: 1;
 }
 
-.profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+.about-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
