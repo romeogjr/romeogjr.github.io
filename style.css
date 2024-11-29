@@ -103,12 +103,13 @@ a:hover {
     position: relative;
     border-radius: 12px; /* Rounded corners */
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Default shadow */
 }
 
 .project-tile:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: none; /* Remove the hover transformation */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Slightly larger shadow for hover effect */
 }
 
 /* Project Image */
