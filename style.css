@@ -191,8 +191,8 @@ section h2 {
 .btn-download {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: #355E3B; /* Hunter green color */
-    color: #fff;
+    background-color: #fff; /* Hunter green color */
+    color: #355E3B;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
@@ -277,8 +277,8 @@ section h2 {
 /* Submit Button */
 .btn-submit {
     padding: 0.75rem 2rem;
-    background-color: #355E3B;
-    color: #fff;
+    background-color: #fff;
+    color: #355E3B;
     font-size: 1.1rem;
     font-weight: bold;
     border: none;
