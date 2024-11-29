@@ -299,21 +299,64 @@ section h2 {
 }
 
 /* Projects Section */
-#projects ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin: 0;
+#projects-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
 }
 
-#projects li {
+.project {
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project h2 {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-#projects li::before {
-    content: "•";
-    color: #007acc;
-    margin-right: 0.5rem;
-    font-weight: bold;
+.dropdown-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007acc;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background-color: #005f99;
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    margin-top: 1rem;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.dropdown-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-content ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    color: #555;
+}
+
+.dropdown-content p, .dropdown-content ul {
+    margin: 0.5rem 0;
 }
 
 /* Resume Section */
