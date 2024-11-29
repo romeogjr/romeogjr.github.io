@@ -90,42 +90,39 @@ a:hover {
 /* Projects Container */
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two rectangles per row */
-    gap: 2rem; /* Space between the rows and columns */
-    max-width: 800px; /* Restrict total width */
+    grid-template-columns: repeat(2, 1fr); /* Two tiles per row */
+    gap: 2rem; /* Space between tiles */
+    max-width: 800px;
     margin: 0 auto; /* Center the grid on the page */
 }
 
-/* Project Tile */
 .project-tile {
-    text-decoration: none;
-    display: block;
-    position: relative;
-    border-radius: 12px; /* Rounded corners */
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Ensure it takes the full grid column width */
+    height: 220px; /* Fixed height for consistency */
+    border-radius: 15px; /* Rounded corners */
+    background-color: #555; /* Fallback background */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Default shadow */
-}
-
-.project-tile:hover {
-    transform: none; /* Remove the hover transformation */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Slightly larger shadow for hover effect */
-}
-
-/* Project Image */
-.project-image {
-    width: 300px; /* Set the width to make it larger */
-    height: 200px; /* Set the height to make it a rectangle */
-    border-radius: 15px; /* Slightly round the corners */
-    background-color: #555; /* Fallback background color */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff; /* Text color for titles */
-    font-size: 1.5rem; /* Larger font for better visibility */
+    transition: box-shadow 0.3s ease; /* Smooth shadow change */
+}
+
+.project-tile:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+}
+
+.project-image {
+    width: 100%; /* Fill the tile width */
+    height: 100%; /* Fill the tile height */
+    border-radius: 15px; /* Match parent radius */
+    object-fit: cover; /* Ensure content inside fits proportionally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Text color */
+    font-size: 1.5rem; /* Title font size */
     text-align: center;
-    margin: 0 auto; /* Center the rectangle within the grid */
 }
 
 /* Project Title */
