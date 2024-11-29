@@ -92,7 +92,8 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(2, 45%); /* Two tiles per row */
     gap: 2rem; /* Space between tiles */
-    max-width: 800px;
+    justify-content: center;
+    max-width: 100%;
     margin: 0 auto; /* Center the grid on the page */
 }
 
