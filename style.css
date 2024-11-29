@@ -299,6 +299,16 @@ section h2 {
 }
 
 /* Projects Section */
+#intro2 {
+    max-width: 800px; /* Restrict paragraph width */
+    margin: 2rem auto; /* Center it horizontally and add spacing */
+    padding: 1rem;
+    text-align: center; /* Center-align the text */
+    font-size: 1.2rem; /* Slightly larger font for emphasis */
+    line-height: 1.8; /* Add line spacing for readability */
+    color: #555; /* Softer text color for a professional look */
+}
+
 #projects-list {
     max-width: 70%; /* Increased overall width to use more screen space */
     margin: 2rem auto;
