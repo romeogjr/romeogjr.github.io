@@ -364,10 +364,13 @@ header {
 }
 
 .coursework ul, .skills ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
+    list-style-type: disc; /* Keep the bullets */
+    list-style-position: inside; /* Align the bullet points with the text */
+    padding-left: 0; /* Remove extra left padding */
+    margin: 0; /* Reset margin for cleaner alignment */
+    text-align: left; /* Align text and bullets properly */
     color: #555;
-    line-height: 1.8;
+    line-height: 1.8; /* Maintain good spacing between lines */
 }
 
 .coursework ul li, .skills ul li {
