@@ -191,8 +191,8 @@ section h2 {
 .btn-download {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: #007acc; /* Accent color */
-    color: #355E3B;
+    background-color: #355E3B; /* Hunter green color */
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
@@ -201,7 +201,7 @@ section h2 {
 }
 
 .btn-download:hover {
-    background-color: #005f99; /* Darker hover color */
+    background-color: #2A4730; /* Darker hunter green for hover effect */
 }
 
 /* Resume Image Placeholder */
@@ -277,7 +277,7 @@ section h2 {
 /* Submit Button */
 .btn-submit {
     padding: 0.75rem 2rem;
-    background-color: #007acc;
+    background-color: #355E3B;
     color: #fff;
     font-size: 1.1rem;
     font-weight: bold;
@@ -288,7 +288,7 @@ section h2 {
 }
 
 .btn-submit:hover {
-    background-color: #355E3B;
+    background-color: #2A4730;
 }
 
 /* Footer */
