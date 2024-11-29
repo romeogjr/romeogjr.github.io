@@ -72,6 +72,7 @@ a:hover {
 }
 
 /* Featured Projects Section */
+/* Featured Projects Section */
 #featured-projects {
     text-align: center;
     margin: 3rem auto;
@@ -83,46 +84,57 @@ a:hover {
 
 #featured-projects h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: #333;
 }
 
+/* Projects Container */
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr); /* Two projects per row */
+    gap: 2rem; /* Spacing between projects */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.project-card {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-.project-card h3 {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 0.5rem;
-}
-
-.project-card p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-.project-card a {
-    color: #007acc;
-    font-weight: bold;
+/* Project Tile */
+.project-tile {
     text-decoration: none;
-    transition: color 0.3s ease;
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card a:hover {
-    color: #005f99;
+.project-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* Project Image */
+.project-image {
+    width: 100%;
+    padding-top: 56.25%; /* Aspect ratio: 16:9 */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #555; /* Fallback color */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Project Title */
+.project-image h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+
 
 /* Carousel Animation */
 @keyframes scroll {
