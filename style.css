@@ -237,20 +237,12 @@ body.about-page header {
     background-image: url('images/about-bg.jpg');
 }
 
-/* Resume Page Header */
-body.resume-page header {
-    background-image: url('images/resume-bg.jpg');
-}
 
 /* Projects Page Header */
 body.projects-page header {
     background-image: url('images/projects-bg.jpg');
 }
 
-/* Contact Page Header */
-body.contact-page header {
-    background-image: url('images/contact-bg.jpg');
-}
 
 /* Section Styling */
 section {
