@@ -491,6 +491,8 @@ section h2 {
 
 .form-group input,
 .form-group textarea {
+    height: 200px; /* Adjust to your desired height */
+    resize: vertical; /* Allow vertical resizing only (optional) */
     padding: 0.75rem;
     font-size: 1rem;
     border: 1px solid #ddd;
