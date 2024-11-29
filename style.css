@@ -90,10 +90,10 @@ a:hover {
 /* Projects Container */
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two projects per row */
-    gap: 2rem; /* Spacing between projects */
-    max-width: 1200px; /* Limit the container's width */
-    margin: 0 auto; /* Center the container */
+    grid-template-columns: repeat(2, 1fr); /* Two rectangles per row */
+    gap: 2rem; /* Space between the rows and columns */
+    max-width: 800px; /* Restrict total width */
+    margin: 0 auto; /* Center the grid on the page */
 }
 
 /* Project Tile */
@@ -113,17 +113,19 @@ a:hover {
 
 /* Project Image */
 .project-image {
-    width: 100%; /* Full width */
-    aspect-ratio: 1 / 1; /* Ensures a square shape */
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px; /* Rounded corners */
-    position: relative;
+    width: 100%; /* Full width of the grid cell */
+    height: 150px; /* Adjust the height to make it rectangular */
+    border-radius: 12px; /* Slightly rounded corners */
+    object-fit: cover; /* Ensure content fits well inside the rectangle */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #555; /* Fallback color */
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    background-color: #555; /* Fallback background color */
+    color: #fff; /* Text color for project titles */
+    font-size: 1.2rem; /* Adjust font size for visibility */
+    text-align: center; /* Center-align text inside */
+    margin: 0 auto; /* Center each rectangle in its grid cell */
 }
 
 /* Project Title */
@@ -134,11 +136,6 @@ a:hover {
     margin: 0;
     text-align: center;
     pointer-events: none; /* Prevents hover effects on the title */
-}
-
-/* Remove hover underline from links */
-.project-tile:hover h3 {
-    text-decoration: none; /* Ensure no underline appears */
 }
 
 
