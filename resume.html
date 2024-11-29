@@ -8,20 +8,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="resume-page">
-    <header>
-        <nav>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-logo">Romeo</div>
+        <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="resume.html">Resume</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>
-        </nav>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>My Resume</h1>
     </header>
+
+    <!-- Resume Section -->
     <section id="resume">
-        <h2>My Resume</h2>
-        <p>You can view or download my resume below:</p>
-        <a href="resume.pdf" target="_blank" class="resume-link">View/Download Resume</a>
+        <div class="resume-container">
+            <!-- Centered Download Link -->
+            <a href="resume.pdf" class="btn-download" target="_blank">Download My Resume</a>
+            
+            <!-- Placeholder for Resume Picture -->
+            <div class="resume-image">
+                <img src="images/resume-picture.jpg" alt="Preview of Resume">
+            </div>
+        </div>
     </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Romeo Garcia Jr. | All rights reserved</p>
     </footer>
