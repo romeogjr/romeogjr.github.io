@@ -93,8 +93,8 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two projects per row */
     gap: 2rem; /* Spacing between projects */
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* Limit the container's width */
+    margin: 0 auto; /* Center the container */
 }
 
 /* Project Tile */
@@ -102,7 +102,7 @@ a:hover {
     text-decoration: none;
     display: block;
     position: relative;
-    border-radius: 8px;
+    border-radius: 12px; /* Rounded corners */
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -118,11 +118,11 @@ a:hover {
     padding-top: 56.25%; /* Aspect ratio: 16:9 */
     background-size: cover;
     background-position: center;
+    border-radius: 12px; /* Rounded square */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
     background-color: #555; /* Fallback color */
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
@@ -131,6 +131,7 @@ a:hover {
 .project-image h3 {
     font-size: 1.5rem;
     font-weight: 600;
+    color: #fff;
     margin: 0;
     text-align: center;
 }
