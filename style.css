@@ -187,8 +187,8 @@ nav {
     font-weight: bold; /* Normal font weight */
     color: #355E3B;
     letter-spacing: 0.05rem; /* Add spacing between letters */
-    margin-left: 3 rem; /* Remove any unintended margin */
-    padding: 0; /* Ensure no padding around the logo */
+    margin-left: 5 rem; /* Remove any unintended margin */
+    
 }
 
 .nav-links {
