@@ -7,23 +7,56 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="contact-page">
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-logo">Romeo</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="resume.html">Resume</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
     <header>
-        <nav>
-            <div class="nav-logo">Romeo</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="resume.html">Resume</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </nav>
+        <h1>Contact Me</h1>
     </header>
+
+    <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:romeo@example.com">romeo@example.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/romeogarciajr" target="_blank">linkedin.com/in/romeogarciajr</a></p>
+        <div class="contact-container">
+            <div class="contact-text">
+                <h2>Get in Touch</h2>
+                <p>
+                    I’d love to hear from you! Whether you have a question, an opportunity, or just want to connect, feel free to reach out.
+                </p>
+                <p>
+                    Alternatively, you can email me directly at <a href="mailto:romeo@example.com">romeo@example.com</a>.
+                </p>
+            </div>
+            <div class="contact-form">
+                <form action="https://formsubmit.co/your-email@example.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
     </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Romeo Garcia Jr. | All rights reserved</p>
     </footer>
