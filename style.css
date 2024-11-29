@@ -36,10 +36,12 @@ nav {
 }
 
 .nav-logo {
-    font-size: 2.3rem;
-    font-weight: normal;
+    font-size: 2.3rem; /* Larger font size for visibility */
+    font-weight: normal; /* Normal font weight */
     color: #333;
-    letter-spacing: 0.1rem; 
+    letter-spacing: 0.1rem; /* Add spacing between letters */
+    margin-left: 0; /* Remove any unintended margin */
+    padding: 0; /* Ensure no padding around the logo */
 }
 
 .nav-links {
