@@ -81,15 +81,15 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
-// Auto-expand and scroll to a project on page load
-window.onload = () => {
-    const projectId = getQueryParam("project");
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get('project');
     if (projectId) {
         const dropdownId = `dropdown${projectId}`;
-        const buttonElement = document.querySelector(`[onclick="toggleDropdown('${dropdownId}', this)"]`);
-        if (buttonElement) {
-            toggleDropdown(dropdownId, buttonElement); // Expand the dropdown
-            document.getElementById(dropdownId).scrollIntoView({ behavior: "smooth" }); // Scroll to the dropdown
+        const dropdown = document.getElementById(dropdownId);
+        if (dropdown) {
+            dropdown.style.display = "block"; // Open the dropdown
+            dropdown.scrollIntoView({ behavior: "smooth" }); // Scroll to it
         }
     }
-};
+});
