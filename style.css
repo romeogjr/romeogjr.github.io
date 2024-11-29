@@ -632,20 +632,3 @@ footer {
     margin-top: 2rem;
 }
 
-
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack logo and links */
-        align-items: center; /* Center-align nav content */
-        padding: 1rem; /* Adjust spacing */
-    }
-
-    .nav-logo {
-        margin: 0; /* Remove left margin */
-    }
-
-    .nav-links {
-        margin-left: 0; /* Center links */
-        gap: 1rem; /* Adjust spacing between links */
-    }
-}
