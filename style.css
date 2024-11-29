@@ -181,10 +181,10 @@ nav {
 
 /* Navigation Logo */
 .nav-logo {
-    font-size: 1.8rem; /* Adjust size if necessary */
+    font-size: 2.3rem; /* Adjust size if necessary */
     font-weight: bold;
     color: #355E3B; /* Hunter green */
-    margin-left: 2rem; /* Increase left margin to push it farther right */
+    margin-left: 1.25rem; /* Increase left margin to push it farther right */
     cursor: pointer; /* Makes the logo clickable */
 }
 
