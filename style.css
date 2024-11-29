@@ -295,6 +295,43 @@ section h2 {
     object-fit: cover;
 }
 
+/* About Details Section */
+.about-details {
+    display: flex; /* Arrange coursework and skills side-by-side */
+    justify-content: space-between; /* Space them evenly */
+    align-items: flex-start; /* Align items to the top */
+    gap: 2rem; /* Add spacing between columns */
+    max-width: 900px; /* Restrict the section width */
+    margin: 2rem auto; /* Center it horizontally and add vertical spacing */
+    padding: 1rem;
+    background-color: #f9f9f9; /* Optional: Light background for separation */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Individual Coursework and Skills Columns */
+.coursework, .skills {
+    flex: 1; /* Distribute space equally */
+}
+
+.coursework h3, .skills h3 {
+    font-size: 1.5rem; /* Slightly larger font for section titles */
+    margin-bottom: 1rem;
+    color: #333; /* Darker text for section titles */
+}
+
+.coursework ul, .skills ul {
+    list-style-type: disc; /* Use bullet points */
+    padding-left: 1.5rem; /* Indent the list */
+    color: #555; /* Neutral text color */
+    line-height: 1.8; /* Add spacing between list items */
+}
+
+.coursework ul li, .skills ul li {
+    margin-bottom: 0.5rem; /* Add space between list items */
+}
+
+
 /* Projects Section */
 #intro2 {
     max-width: 800px; /* Restrict paragraph width */
