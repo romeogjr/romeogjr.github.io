@@ -46,3 +46,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scrollCarousel(); // Start scrolling
 });
+
+
+// Function to get URL parameters
+function getQueryParams(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Function to open the dropdown for a specific project
+function openProjectDropdown(projectId) {
+    const dropdownId = `dropdown${projectId}`;
+    const dropdown = document.getElementById(dropdownId);
+    if (dropdown) {
+        dropdown.style.display = "block"; // Open the dropdown
+    }
+}
+
+// On page load, check for the project parameter
+window.onload = () => {
+    const project = getQueryParams('project');
+    if (project) {
+        openProjectDropdown(project); // Open the specific project dropdown
+        // Optionally, scroll to the project section
+        document.getElementById(`dropdown${project}`).scrollIntoView({ behavior: "smooth" });
+    }
+};
