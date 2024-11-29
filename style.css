@@ -237,7 +237,6 @@ body.about-page header {
     background-image: url('images/about-bg.jpg');
 }
 
-
 /* Projects Page Header */
 body.projects-page header {
     background-image: url('images/projects-bg.jpg');
@@ -262,52 +261,65 @@ section h2 {
 
 
 
-/* About Container: Who I Am Section */
+/* Header Section */
+header {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/about-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* About Section */
 .about-container {
     display: flex;
-    justify-content: center; /* Center-align text and image */
-    align-items: center; /* Vertically align content */
-    gap: 2rem; /* Add space between text and image */
-    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
-    max-width: 1200px; /* Restrict width */
-    margin: 0 auto; /* Center horizontally */
-    padding: 2rem;
-    text-align: left; /* Ensure text alignment doesn't force centering */
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
 }
 
 .about-text {
-    flex: 2; /* Take more space for text */
+    flex: 2;
     font-size: 1.2rem;
+    line-height: 1.8;
     color: #555;
-    line-height: 1.8; /* Better readability */
 }
 
 .about-image {
-    flex: 1; /* Take less space for the image */
+    flex: 1;
     text-align: center;
 }
 
 .about-image img {
     width: 100%;
-    max-width: 300px; /* Restrict image size */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    object-fit: cover;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* What I Do & What I Aspire Sections */
+/* Section Styles */
 .about-section {
-    max-width: 1200px; /* Restrict width */
-    margin: 2rem auto; /* Center horizontally */
+    max-width: 1200px;
+    margin: 2rem auto;
     padding: 1rem;
     text-align: center;
-    background-color: #f9f9f9; /* Light background for contrast */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .about-section h2 {
-    font-size: 1.8rem; /* Slightly larger font for headings */
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #333;
 }
@@ -315,41 +327,41 @@ section h2 {
 .about-section p {
     font-size: 1.2rem;
     color: #555;
-    line-height: 1.8; /* Better spacing for readability */
+    line-height: 1.8;
 }
 
-/* Relevant Coursework & Skills Section */
+/* Relevant Coursework and Skills */
 .about-details {
     display: flex;
-    justify-content: space-between; /* Space the two sections evenly */
-    gap: 2rem; /* Add spacing between the columns */
-    max-width: 1200px; /* Restrict width */
-    margin: 2rem auto; /* Center horizontally */
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
     padding: 1rem;
-    background-color: #f9f9f9; /* Light background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .coursework, .skills {
-    flex: 1; /* Equal space for both columns */
+    flex: 1;
 }
 
 .coursework h3, .skills h3 {
-    font-size: 1.5rem; /* Heading size */
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #333;
 }
 
 .coursework ul, .skills ul {
-    list-style-type: disc; /* Bullets */
-    padding-left: 1.5rem; /* Indent list items */
-    color: #555; /* Softer text color */
-    line-height: 1.8; /* Spacing between items */
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #555;
+    line-height: 1.8;
 }
 
 .coursework ul li, .skills ul li {
-    margin-bottom: 0.5rem; /* Space between list items */
+    margin-bottom: 0.5rem;
 }
 
 /* Projects Section */
