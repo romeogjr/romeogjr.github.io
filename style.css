@@ -187,17 +187,18 @@ section h2 {
 
 /* Contact Section */
 #contact {
-    text-align: center;
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center; /* Center-align text content */
+    max-width: 800px; /* Restrict the width */
+    margin: 3rem auto; /* Center the section horizontally and add vertical spacing */
+    padding: 2rem 1rem; /* Add padding inside the section */
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 
+/* Contact Title and Description */
 .contact-container h2 {
-    font-size: 2rem;
+    font-size: 2rem; /* Larger title font */
     margin-bottom: 1rem;
     color: #333;
 }
@@ -209,18 +210,19 @@ section h2 {
     margin-bottom: 2rem;
 }
 
+/* Contact Form */
 .contact-form {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
+    flex-direction: column; /* Stack form fields vertically */
+    gap: 1.5rem; /* Add space between form elements */
+    align-items: center; /* Center the form fields horizontally */
 }
 
 .form-group {
     width: 100%;
-    max-width: 500px;
+    max-width: 500px; /* Restrict the width for better readability */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack label and input */
     text-align: left;
 }
 
@@ -236,16 +238,17 @@ section h2 {
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
-    width: 100%;
+    width: 100%; /* Full width of the container */
     background-color: #fff;
     color: #333;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
 }
 
 .form-group textarea {
-    resize: vertical;
+    resize: vertical; /* Allow vertical resizing only */
 }
 
+/* Submit Button */
 .btn-submit {
     padding: 0.75rem 2rem;
     background-color: #007acc;
@@ -261,6 +264,7 @@ section h2 {
 .btn-submit:hover {
     background-color: #005f99;
 }
+
 /* Footer */
 footer {
     text-align: center;
