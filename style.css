@@ -365,12 +365,13 @@ header {
 
 .coursework ul, .skills ul {
     list-style-type: disc; /* Keep the bullets */
-    list-style-position: inside; /* Align the bullet points with the text */
-    padding-left: 0; /* Remove extra left padding */
-    margin: 0; /* Reset margin for cleaner alignment */
-    text-align: left; /* Align text and bullets properly */
+    list-style-position: inside; /* Ensure bullets are aligned with text */
+    text-align: center; /* Center both the bullets and the text */
+    padding: 0; /* Remove any additional padding */
+    margin: 0 auto; /* Center the entire list horizontally */
+    display: inline-block; /* Makes the list behave like inline content for proper centering */
     color: #555;
-    line-height: 1.8; /* Maintain good spacing between lines */
+    line-height: 1.8; /* Add spacing between list items */
 }
 
 .coursework ul li, .skills ul li {
