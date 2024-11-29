@@ -338,19 +338,23 @@ header {
 /* Relevant Coursework and Skills */
 .about-details {
     display: flex;
-    justify-content: space-evenly;
-    gap: 2rem;
-    max-width: 100%;
-    flex-wrap: wrap;
-    margin: 2rem auto;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Align content vertically */
+    gap: 2rem; /* Add spacing between the columns */
+    max-width: 1200px; /* Restrict the overall width */
+    margin: 2rem auto; /* Center the container on the page */
     padding: 1rem;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center; /* Center text inside the container */
 }
 
 .coursework, .skills {
-    flex: 1;
+    flex: 1; /* Allow equal width for both columns */
+    min-width: 300px; /* Ensure columns don't shrink too small */
+    text-align: center; /* Center the text content inside */
 }
 
 .coursework h3, .skills h3 {
