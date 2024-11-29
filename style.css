@@ -491,8 +491,6 @@ section h2 {
 
 .form-group input,
 .form-group textarea {
-    height: 200px; /* Adjust to your desired height */
-    resize: vertical; /* Allow vertical resizing only (optional) */
     padding: 0.75rem;
     font-size: 1rem;
     border: 1px solid #ddd;
@@ -505,6 +503,18 @@ section h2 {
 
 .form-group textarea {
     resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Style only the message textarea */
+#message {
+    height: 175px; /* Adjust height for the message box */
+    resize: vertical; /* Allow users to resize it vertically if needed */
+    font-size: 1rem; /* Ensure consistent font size */
+    padding: 0.75rem; /* Add padding for better readability */
+    border: 1px solid #ddd; /* Optional: Border styling */
+    border-radius: 4px; /* Optional: Rounded corners */
+    width: 100%; /* Ensure it spans the width of the form */
+    box-sizing: border-box; /* Includes padding in width/height calculations */
 }
 
 /* Submit Button */
