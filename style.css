@@ -144,6 +144,21 @@ a:hover {
     text-decoration: none; /* Ensure underline does not appear on hover */
 }
 
+.project-tile {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Ensure text color is inherited */
+}
+
+.project-tile:hover {
+    text-decoration: none; /* Ensure no underline appears on hover */
+    color: inherit; /* Prevent color change on hover */
+}
+
+.project-tile:focus {
+    text-decoration: none; /* Ensure no underline appears on focus */
+    outline: none; /* Remove default focus outline */
+}
+
 /* Carousel Animation */
 @keyframes scroll {
     0% { transform: translateX(0); }
