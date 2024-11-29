@@ -448,6 +448,15 @@ header {
     background-color: #2A4730; /* Darker hunter green */
 }
 
+.dropdown-content {
+    display: none; /* Hidden by default */
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out; /* Optional: smooth expansion */
+}
+
 /* Circular Image */
 .project-image1 {
     width: 300px; /* Increased size for larger images */
