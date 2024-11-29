@@ -466,7 +466,7 @@ header {
 }
 
 /* Circular Image */
-.project-image {
+.project-image1 {
     width: 300px; /* Increased size for larger images */
     height: 300px;
     border-radius: 50%; /* Circular shape */
