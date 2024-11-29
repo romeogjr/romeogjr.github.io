@@ -30,12 +30,12 @@ scrollCarousel(); // Start scrolling
 
 function toggleDropdown(dropdownId, buttonElement) {
     const dropdown = document.getElementById(dropdownId);
-    if (dropdown.classList.contains('open')) {
-        dropdown.classList.remove('open');
-        buttonElement.setAttribute('aria-expanded', 'false');
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+        buttonElement.setAttribute("aria-expanded", "false");
     } else {
-        dropdown.classList.add('open');
-        buttonElement.setAttribute('aria-expanded', 'true');
+        dropdown.style.display = "block";
+        buttonElement.setAttribute("aria-expanded", "true");
     }
 }
 
