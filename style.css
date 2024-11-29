@@ -623,17 +623,17 @@ footer {
 
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
-        align-items: flex-start; /* Align logo and links to the left */
-        padding: 1rem; /* Reduce padding on smaller screens */
+        flex-direction: column; /* Stack logo and links */
+        align-items: center; /* Center-align nav content */
+        padding: 1rem; /* Adjust spacing */
     }
 
     .nav-logo {
-        margin-left: 1rem; /* Reduce left margin */
+        margin: 0; /* Remove left margin */
     }
 
     .nav-links {
-        margin-left: 0; /* Reset auto margin for better alignment */
-        gap: 1rem; /* Reduce link spacing */
+        margin-left: 0; /* Center links */
+        gap: 1rem; /* Adjust spacing between links */
     }
 }
