@@ -33,14 +33,14 @@ a:hover {
 
 .carousel-container {
     display: flex;
-    animation: scroll 10s linear infinite; /* Adjust timing for all images */
-    width: calc(300px * 20); /* Total width = image width * number of images */
+    animation: scroll 60s linear infinite; /* Adjust timing for all images */
+    width: calc(330px * 20); /* Total width = image width * number of images */
     gap: 0; /* No gap between images */
 }
 
 .carousel-image {
-    width: 300px; /* Image width */
-    height: 300px; /* Image height */
+    width: 330px; /* Image width */
+    height: 330px; /* Image height */
     object-fit: cover; /* Keeps the images proportional */
     flex-shrink: 0; /* Prevents images from shrinking */
 }
