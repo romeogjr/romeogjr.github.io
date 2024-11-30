@@ -1,59 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.carousel-container');
-    const images = Array.from(container.querySelectorAll('.carousel-image'));
-
-    // Duplicate the images to create the seamless effect
-    images.forEach((image) => {
-        const clone = image.cloneNode(true);
-        container.appendChild(clone); // Append clone to the end
-    });
-
-    let isPaused = false; // Track if the carousel is paused
-
-    // Pause scrolling when the mouse is over the carousel
-    container.addEventListener('mouseover', () => {
-        isPaused = true;
-    });
-
-    // Resume scrolling when the mouse leaves the carousel
-    container.addEventListener('mouseout', () => {
-        isPaused = false;
-    });
-
-    // Continuous scroll logic
+    // Initialize Carousel
+    const carouselContainer = document.querySelector('.carousel-container');
+    const images = document.querySelectorAll('.carousel-image');
     let scrollPosition = 0;
+    let isCarouselPaused = false;
 
-    function scrollCarousel() {
-        if (!isPaused) {
-            scrollPosition += 1; // Adjust speed by changing this value
-            container.scrollLeft = scrollPosition;
+    if (carouselContainer && images.length > 0) {
+        // Clone images for seamless looping
+        const totalImages = images.length;
+        images.forEach(image => {
+            const clone = image.cloneNode(true);
+            carouselContainer.appendChild(clone);
+        });
 
-            // Reset scroll position when reaching the end
-            if (scrollPosition >= container.scrollWidth / 2) {
-                scrollPosition = 0; // Reset to the start of the original images
+        const imageWidth = images[0].clientWidth;
+        const totalWidth = imageWidth * totalImages;
+
+        // Carousel scrolling logic
+        function scrollCarousel() {
+            if (!isCarouselPaused) {
+                scrollPosition += 1; // Move by 1 pixel
+                if (scrollPosition >= totalWidth) {
+                    scrollPosition = 0; // Reset to the beginning
+                    carouselContainer.style.transform = `translateX(0)`;
+                } else {
+                    carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
+                }
             }
+            requestAnimationFrame(scrollCarousel);
         }
-        requestAnimationFrame(scrollCarousel); // Keep the scrolling smooth
+
+        // Pause carousel on hover
+        carouselContainer.addEventListener('mouseover', () => (isCarouselPaused = true));
+        carouselContainer.addEventListener('mouseout', () => (isCarouselPaused = false));
+
+        scrollCarousel(); // Start scrolling
+    } else {
+        console.warn('No images found in the carousel. Add images to enable the scrolling effect.');
     }
 
-    scrollCarousel(); // Start the scrolling
-});
+    // Function to toggle dropdown visibility
+    function toggleDropdown(dropdownId, buttonElement) {
+        const dropdown = document.getElementById(dropdownId);
+        if (dropdown) {
+            const isVisible = dropdown.classList.toggle('show');
+            if (buttonElement) {
+                buttonElement.setAttribute('aria-expanded', isVisible.toString());
+            }
+        }
+    }
 
-const dropdownButtons = document.querySelectorAll('.dropdown-btn');
-dropdownButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const contentId = button.getAttribute('aria-controls');
-        const content = document.getElementById(contentId);
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-        button.setAttribute('aria-expanded', !isExpanded);
-        content.style.display = isExpanded ? 'none' : 'block';
+    // Attach event listeners to dropdown buttons
+    const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+    dropdownButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const dropdownId = button.getAttribute('aria-controls');
+            toggleDropdown(dropdownId, button);
+        });
     });
-});
 
-
-    // Open a dropdown based on query parameter
-    function openProjectDropdownFromQuery() {
+    // Handle query parameters to open specific project dropdown
+    function openProjectFromQuery() {
         const params = new URLSearchParams(window.location.search);
         const projectId = params.get('project');
 
@@ -64,8 +71,6 @@ dropdownButtons.forEach(button => {
             if (dropdown) {
                 // Open the dropdown
                 dropdown.classList.add('show');
-
-                // Scroll to the dropdown
                 dropdown.scrollIntoView({ behavior: 'smooth' });
 
                 // Update aria-expanded for accessibility
@@ -77,15 +82,5 @@ dropdownButtons.forEach(button => {
         }
     }
 
-    // Attach event listeners to dropdown buttons
-    const dropdownButtons = document.querySelectorAll('.dropdown-btn');
-    dropdownButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const dropdownId = button.getAttribute('data-dropdown-id');
-            toggleDropdown(dropdownId, button);
-        });
-    });
-
-    // Automatically open the correct dropdown if navigated with query parameters
-    openProjectDropdownFromQuery();
+    openProjectFromQuery(); // Automatically open project based on query
 });
