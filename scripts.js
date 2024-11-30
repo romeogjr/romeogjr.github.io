@@ -82,24 +82,30 @@ function getQueryParam(param) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Parse the query parameter
-    const params = new URLSearchParams(window.location.search);
-    const projectId = params.get('project'); // e.g., '1', '2', etc.
+    // Function to open the dropdown based on query parameter
+    function openDropdownFromQuery() {
+        const params = new URLSearchParams(window.location.search);
+        const dropdownId = params.get('dropdown'); // Get 'dropdown' parameter
 
-    if (projectId) {
-        const dropdownId = `dropdown${projectId}`;
-        const dropdown = document.getElementById(dropdownId);
-
-        // Open the dropdown and scroll it into view
-        if (dropdown) {
-            dropdown.style.display = "block";
-            dropdown.scrollIntoView({ behavior: "smooth" });
-
-            // Optionally update the aria-expanded attribute for accessibility
-            const buttonElement = dropdown.previousElementSibling.querySelector('.dropdown-btn');
-            if (buttonElement) {
-                buttonElement.setAttribute("aria-expanded", "true");
+        if (dropdownId) {
+            const dropdown = document.getElementById(`dropdown${dropdownId}`);
+            if (dropdown) {
+                dropdown.classList.add('show'); // Open the dropdown
+                dropdown.scrollIntoView({ behavior: 'smooth' }); // Scroll to it
             }
         }
     }
+
+    // Initialize dropdowns for buttons
+    document.querySelectorAll('.dropdown-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const dropdownId = button.getAttribute('aria-controls');
+            const dropdown = document.getElementById(dropdownId);
+            const isExpanded = dropdown.classList.toggle('show');
+            button.setAttribute('aria-expanded', isExpanded.toString());
+        });
+    });
+
+    // Open dropdown if query parameter exists
+    openDropdownFromQuery();
 });
