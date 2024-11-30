@@ -449,19 +449,18 @@ header {
 }
 
 .dropdown-content {
-    max-height: 0; /* Start fully collapsed */
-    overflow: hidden; /* Prevent content overflow */
-    margin: 0; /* Remove margins while collapsed */
-    padding: 0; /* Remove padding while collapsed */
-    border-top: 1px solid #ddd; /* Border remains for visual consistency */
+    display: block; /* Must be block for max-height transitions to work */
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-top: 1px solid #ddd;
     background-color: #fff;
-    transition: max-height 0.3s ease, padding 0.3s ease; /* Smooth transition for height and padding */
+    max-height: 0; /* Fully collapsed by default */
+    overflow: hidden; /* Prevent content from spilling out */
+    transition: max-height 0.3s ease-in-out; /* Smooth max-height expansion */
 }
 
 .dropdown-content.show {
-    max-height: 500px; /* Adjust based on content height */
-    padding: 1.5rem; /* Restore padding when expanded */
-    margin-top: 1.5rem; /* Restore margin when expanded */
+    max-height: 500px; /* Adjust this value to fit your content */
 }
 
 /* Circular Image */
