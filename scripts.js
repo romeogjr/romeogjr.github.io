@@ -1,36 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Carousel
-    const carouselContainer = document.querySelector('.carousel-container');
-    const images = document.querySelectorAll('.carousel-image');
-    let isCarouselPaused = false;
+    const container = document.querySelector('.carousel-container');
+    const images = Array.from(container.querySelectorAll('.carousel-image'));
 
-    if (carouselContainer && images.length > 0) {
-        // Duplicate images for seamless loop
-        images.forEach(image => {
-            const clone = image.cloneNode(true);
-            carouselContainer.appendChild(clone);
-        });
+    // Duplicate the images to create the seamless effect
+    images.forEach((image) => {
+        const clone = image.cloneNode(true);
+        container.appendChild(clone); // Append clone to the end
+    });
 
-        // Carousel scrolling logic
-        let scrollPosition = 0;
-        const imageWidth = images[0].clientWidth;
-        const totalWidth = imageWidth * images.length;
+    let isPaused = false; // Track if the carousel is paused
 
-        function scrollCarousel() {
-            if (!isCarouselPaused) {
-                scrollPosition += 1;
-                if (scrollPosition >= totalWidth) scrollPosition = 0;
-                carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
+    // Pause scrolling when the mouse is over the carousel
+    container.addEventListener('mouseover', () => {
+        isPaused = true;
+    });
+
+    // Resume scrolling when the mouse leaves the carousel
+    container.addEventListener('mouseout', () => {
+        isPaused = false;
+    });
+
+    // Continuous scroll logic
+    let scrollPosition = 0;
+
+    function scrollCarousel() {
+        if (!isPaused) {
+            scrollPosition += 1; // Adjust speed by changing this value
+            container.scrollLeft = scrollPosition;
+
+            // Reset scroll position when reaching the end
+            if (scrollPosition >= container.scrollWidth / 2) {
+                scrollPosition = 0; // Reset to the start of the original images
             }
-            requestAnimationFrame(scrollCarousel);
         }
-
-        // Pause carousel on hover
-        carouselContainer.addEventListener('mouseover', () => (isCarouselPaused = true));
-        carouselContainer.addEventListener('mouseout', () => (isCarouselPaused = false));
-
-        scrollCarousel(); // Start the carousel
+        requestAnimationFrame(scrollCarousel); // Keep the scrolling smooth
     }
+
+    scrollCarousel(); // Start the scrolling
+});
 
     // Function to toggle dropdown
     function toggleDropdown(dropdownId, buttonElement = null) {
