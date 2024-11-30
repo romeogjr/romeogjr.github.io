@@ -455,6 +455,9 @@ header {
     border-top: 1px solid #ddd;
     background-color: #fff;
     transition: all 0.3s ease-in-out; /* Optional: smooth expansion */
+    overflow: hidden;
+    transition: max-height 0.3 ease;
+    max-height: 0;
 }
 
 /* Circular Image */
@@ -465,15 +468,6 @@ header {
     object-fit: cover; /* Maintain aspect ratio */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
     flex-shrink: 0; /* Prevent image shrinking */
-}
-
-/* Dropdown Content */
-.dropdown-content {
-    display: none; /* Hidden by default */
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    border-top: 1px solid #ddd;
-    background-color: #fff;
 }
 
 .dropdown-content h3 {
