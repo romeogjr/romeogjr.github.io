@@ -454,6 +454,8 @@ header {
     padding: 0; /* Remove padding initially to hide the content */
     border-top: none; /* Hide the border initially */
     background-color: #fff;
+    margin: 0;
+    overflow: hidden;
     max-height: 0; /* Fully collapsed */
     overflow: hidden; /* Prevent content overflow */
     transition: max-height 0.3s ease-in-out, padding 0.3s ease, margin 0.3s ease, border 0.3s ease; /* Smooth transitions */
