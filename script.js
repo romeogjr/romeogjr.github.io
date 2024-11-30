@@ -82,14 +82,24 @@ function getQueryParam(param) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Parse the query parameter
     const params = new URLSearchParams(window.location.search);
-    const projectId = params.get('project');
+    const projectId = params.get('project'); // e.g., '1', '2', etc.
+
     if (projectId) {
         const dropdownId = `dropdown${projectId}`;
         const dropdown = document.getElementById(dropdownId);
+
+        // Open the dropdown and scroll it into view
         if (dropdown) {
-            dropdown.style.display = "block"; // Open the dropdown
-            dropdown.scrollIntoView({ behavior: "smooth" }); // Scroll to it
+            dropdown.style.display = "block";
+            dropdown.scrollIntoView({ behavior: "smooth" });
+
+            // Optionally update the aria-expanded attribute for accessibility
+            const buttonElement = dropdown.previousElementSibling.querySelector('.dropdown-btn');
+            if (buttonElement) {
+                buttonElement.setAttribute("aria-expanded", "true");
+            }
         }
     }
 });
