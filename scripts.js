@@ -1,86 +1,105 @@
+const container = document.querySelector('.carousel-container');
+let isPaused = false;
+
+container.addEventListener('mouseover', () => isPaused = true);
+container.addEventListener('mouseout', () => isPaused = false);
+
+setInterval(() => {
+    if (!isPaused) {
+        container.scrollLeft += 1;
+    }
+}, 20);
+
+let isCarouselPaused = false;
+
+carouselContainer.addEventListener('mouseover', () => (isCarouselPaused = true));
+carouselContainer.addEventListener('mouseout', () => (isCarouselPaused = false));
+
+function scrollCarousel() {
+    if (!isCarouselPaused) {
+        scrollPosition += 1; // Move one pixel at a time
+        if (scrollPosition >= totalWidth) {
+            scrollPosition = 0; // Reset to the beginning when we reach the end
+        }
+        carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
+    }
+    requestAnimationFrame(scrollCarousel); // Keep scrolling
+}
+
+scrollCarousel(); // Start scrolling
+
+function toggleDropdown(dropdownId, buttonElement) {
+    const dropdown = document.getElementById(dropdownId);
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+        buttonElement.setAttribute("aria-expanded", "false");
+    } else {
+        dropdown.style.display = "block";
+        buttonElement.setAttribute("aria-expanded", "true");
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Carousel
     const carouselContainer = document.querySelector('.carousel-container');
     const images = document.querySelectorAll('.carousel-image');
-    let scrollPosition = 0;
-    let isCarouselPaused = false;
-
-    if (carouselContainer && images.length > 0) {
-        // Clone images for seamless looping
-        const totalImages = images.length;
-        images.forEach(image => {
-            const clone = image.cloneNode(true);
-            carouselContainer.appendChild(clone);
-        });
-
-        const imageWidth = images[0].clientWidth;
-        const totalWidth = imageWidth * totalImages;
-
-        // Carousel scrolling logic
-        function scrollCarousel() {
-            if (!isCarouselPaused) {
-                scrollPosition += 1; // Move by 1 pixel
-                if (scrollPosition >= totalWidth) {
-                    scrollPosition = 0; // Reset to the beginning
-                    carouselContainer.style.transform = `translateX(0)`;
-                } else {
-                    carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
-                }
-            }
-            requestAnimationFrame(scrollCarousel);
-        }
-
-        // Pause carousel on hover
-        carouselContainer.addEventListener('mouseover', () => (isCarouselPaused = true));
-        carouselContainer.addEventListener('mouseout', () => (isCarouselPaused = false));
-
-        scrollCarousel(); // Start scrolling
-    } else {
-        console.warn('No images found in the carousel. Add images to enable the scrolling effect.');
-    }
-
-    // Function to toggle dropdown visibility
-    function toggleDropdown(dropdownId, buttonElement) {
-        const dropdown = document.getElementById(dropdownId);
-        if (dropdown) {
-            const isVisible = dropdown.classList.toggle('show');
-            if (buttonElement) {
-                buttonElement.setAttribute('aria-expanded', isVisible.toString());
-            }
-        }
-    }
-
-    // Attach event listeners to dropdown buttons
-    const dropdownButtons = document.querySelectorAll('.dropdown-btn');
-    dropdownButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const dropdownId = button.getAttribute('aria-controls');
-            toggleDropdown(dropdownId, button);
-        });
+    
+    // Duplicate all images to create a seamless loop
+    images.forEach(image => {
+        const clone = image.cloneNode(true);
+        carouselContainer.appendChild(clone);
     });
 
-    // Handle query parameters to open specific project dropdown
-    function openProjectFromQuery() {
-        const params = new URLSearchParams(window.location.search);
-        const projectId = params.get('project');
+    // Smooth infinite scroll
+    let scrollPosition = 0;
+    const imageWidth = images[0].clientWidth; // Width of one image
+    const totalWidth = imageWidth * images.length; // Width of original images
 
-        if (projectId) {
-            const dropdownId = `dropdown${projectId}`;
-            const dropdown = document.getElementById(dropdownId);
+    function scrollCarousel() {
+        scrollPosition += 1; // Move one pixel at a time
+        if (scrollPosition >= totalWidth) {
+            scrollPosition = 0; // Reset to the beginning when we reach the end
+        }
+        carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
+        requestAnimationFrame(scrollCarousel); // Keep scrolling
+    }
 
-            if (dropdown) {
-                // Open the dropdown
-                dropdown.classList.add('show');
-                dropdown.scrollIntoView({ behavior: 'smooth' });
+    scrollCarousel(); // Start scrolling
+});
 
-                // Update aria-expanded for accessibility
-                const buttonElement = dropdown.previousElementSibling.querySelector('.dropdown-btn');
-                if (buttonElement) {
-                    buttonElement.setAttribute('aria-expanded', 'true');
-                }
+// Function to open the dropdown for a specific project
+function openProjectDropdown(projectId) {
+    const dropdownId = `dropdown${projectId}`;
+    const dropdown = document.getElementById(dropdownId);
+    if (dropdown) {
+        dropdown.style.display = "block"; // Open the dropdown
+    }
+}
+
+// Function to get query parameters
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Parse the query parameter
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get('project'); // e.g., '1', '2', etc.
+
+    if (projectId) {
+        const dropdownId = `dropdown${projectId}`;
+        const dropdown = document.getElementById(dropdownId);
+
+        // Open the dropdown and scroll it into view
+        if (dropdown) {
+            dropdown.style.display = "block";
+            dropdown.scrollIntoView({ behavior: "smooth" });
+
+            // Optionally update the aria-expanded attribute for accessibility
+            const buttonElement = dropdown.previousElementSibling.querySelector('.dropdown-btn');
+            if (buttonElement) {
+                buttonElement.setAttribute("aria-expanded", "true");
             }
         }
     }
-
-    openProjectFromQuery(); // Automatically open project based on query
 });
