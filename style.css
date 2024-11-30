@@ -449,15 +449,18 @@ header {
 }
 
 .dropdown-content {
-    display: none; /* Hidden by default */
+    display: block; /* Must be block for max-height transitions to work */
     margin-top: 1.5rem;
     padding: 1.5rem;
     border-top: 1px solid #ddd;
     background-color: #fff;
-    transition: all 0.3s ease-in-out; /* Optional: smooth expansion */
-    overflow: hidden;
-    transition: max-height 0.3 ease;
-    max-height: 0;
+    max-height: 0; /* Fully collapsed by default */
+    overflow: hidden; /* Prevent content from spilling out */
+    transition: max-height 0.3s ease-in-out; /* Smooth max-height expansion */
+}
+
+.dropdown-content.show {
+    max-height: 500px; /* Adjust this value to fit your content */
 }
 
 /* Circular Image */
