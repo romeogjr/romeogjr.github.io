@@ -1,105 +1,69 @@
-const container = document.querySelector('.carousel-container');
-let isPaused = false;
-
-container.addEventListener('mouseover', () => isPaused = true);
-container.addEventListener('mouseout', () => isPaused = false);
-
-setInterval(() => {
-    if (!isPaused) {
-        container.scrollLeft += 1;
-    }
-}, 20);
-
-let isCarouselPaused = false;
-
-carouselContainer.addEventListener('mouseover', () => (isCarouselPaused = true));
-carouselContainer.addEventListener('mouseout', () => (isCarouselPaused = false));
-
-function scrollCarousel() {
-    if (!isCarouselPaused) {
-        scrollPosition += 1; // Move one pixel at a time
-        if (scrollPosition >= totalWidth) {
-            scrollPosition = 0; // Reset to the beginning when we reach the end
-        }
-        carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
-    }
-    requestAnimationFrame(scrollCarousel); // Keep scrolling
-}
-
-scrollCarousel(); // Start scrolling
-
-function toggleDropdown(dropdownId, buttonElement) {
-    const dropdown = document.getElementById(dropdownId);
-    if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-        buttonElement.setAttribute("aria-expanded", "false");
-    } else {
-        dropdown.style.display = "block";
-        buttonElement.setAttribute("aria-expanded", "true");
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Carousel
     const carouselContainer = document.querySelector('.carousel-container');
     const images = document.querySelectorAll('.carousel-image');
-    
-    // Duplicate all images to create a seamless loop
-    images.forEach(image => {
-        const clone = image.cloneNode(true);
-        carouselContainer.appendChild(clone);
-    });
+    let isCarouselPaused = false;
 
-    // Smooth infinite scroll
-    let scrollPosition = 0;
-    const imageWidth = images[0].clientWidth; // Width of one image
-    const totalWidth = imageWidth * images.length; // Width of original images
+    if (carouselContainer && images.length > 0) {
+        // Duplicate images for seamless loop
+        images.forEach(image => {
+            const clone = image.cloneNode(true);
+            carouselContainer.appendChild(clone);
+        });
 
-    function scrollCarousel() {
-        scrollPosition += 1; // Move one pixel at a time
-        if (scrollPosition >= totalWidth) {
-            scrollPosition = 0; // Reset to the beginning when we reach the end
+        // Carousel scrolling logic
+        let scrollPosition = 0;
+        const imageWidth = images[0].clientWidth;
+        const totalWidth = imageWidth * images.length;
+
+        function scrollCarousel() {
+            if (!isCarouselPaused) {
+                scrollPosition += 1;
+                if (scrollPosition >= totalWidth) scrollPosition = 0;
+                carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
+            }
+            requestAnimationFrame(scrollCarousel);
         }
-        carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
-        requestAnimationFrame(scrollCarousel); // Keep scrolling
+
+        // Pause carousel on hover
+        carouselContainer.addEventListener('mouseover', () => (isCarouselPaused = true));
+        carouselContainer.addEventListener('mouseout', () => (isCarouselPaused = false));
+
+        scrollCarousel(); // Start the carousel
     }
 
-    scrollCarousel(); // Start scrolling
-});
-
-// Function to open the dropdown for a specific project
-function openProjectDropdown(projectId) {
-    const dropdownId = `dropdown${projectId}`;
-    const dropdown = document.getElementById(dropdownId);
-    if (dropdown) {
-        dropdown.style.display = "block"; // Open the dropdown
+    // Toggle dropdown functionality
+    function toggleDropdown(dropdownId, buttonElement) {
+        const dropdown = document.getElementById(dropdownId);
+        if (dropdown) {
+            dropdown.classList.toggle('show');
+            const isExpanded = dropdown.classList.contains('show');
+            buttonElement.setAttribute('aria-expanded', isExpanded.toString());
+        }
     }
-}
 
-// Function to get query parameters
-function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Parse the query parameter
+    // Handle query parameter for project dropdown
     const params = new URLSearchParams(window.location.search);
-    const projectId = params.get('project'); // e.g., '1', '2', etc.
+    const projectId = params.get('project');
 
     if (projectId) {
         const dropdownId = `dropdown${projectId}`;
         const dropdown = document.getElementById(dropdownId);
 
-        // Open the dropdown and scroll it into view
         if (dropdown) {
-            dropdown.style.display = "block";
-            dropdown.scrollIntoView({ behavior: "smooth" });
-
-            // Optionally update the aria-expanded attribute for accessibility
+            dropdown.classList.add('show');
+            dropdown.scrollIntoView({ behavior: 'smooth' });
             const buttonElement = dropdown.previousElementSibling.querySelector('.dropdown-btn');
-            if (buttonElement) {
-                buttonElement.setAttribute("aria-expanded", "true");
-            }
+            if (buttonElement) buttonElement.setAttribute('aria-expanded', 'true');
         }
     }
+
+    // Attach dropdown toggle listeners to buttons
+    const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+    dropdownButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const dropdownId = button.getAttribute('data-dropdown-id');
+            toggleDropdown(dropdownId, button);
+        });
+    });
 });
