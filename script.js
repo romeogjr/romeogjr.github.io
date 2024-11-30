@@ -32,33 +32,44 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollCarousel(); // Start the carousel
     }
 
-    // Toggle dropdown functionality
-    function toggleDropdown(dropdownId, buttonElement) {
+    // Function to toggle dropdown
+    function toggleDropdown(dropdownId, buttonElement = null) {
         const dropdown = document.getElementById(dropdownId);
         if (dropdown) {
             dropdown.classList.toggle('show');
-            const isExpanded = dropdown.classList.contains('show');
-            buttonElement.setAttribute('aria-expanded', isExpanded.toString());
+            if (buttonElement) {
+                const isExpanded = dropdown.classList.contains('show');
+                buttonElement.setAttribute('aria-expanded', isExpanded.toString());
+            }
         }
     }
 
-    // Handle query parameter for project dropdown
-    const params = new URLSearchParams(window.location.search);
-    const projectId = params.get('project');
+    // Open a dropdown based on query parameter
+    function openProjectDropdownFromQuery() {
+        const params = new URLSearchParams(window.location.search);
+        const projectId = params.get('project');
 
-    if (projectId) {
-        const dropdownId = `dropdown${projectId}`;
-        const dropdown = document.getElementById(dropdownId);
+        if (projectId) {
+            const dropdownId = `dropdown${projectId}`;
+            const dropdown = document.getElementById(dropdownId);
 
-        if (dropdown) {
-            dropdown.classList.add('show');
-            dropdown.scrollIntoView({ behavior: 'smooth' });
-            const buttonElement = dropdown.previousElementSibling.querySelector('.dropdown-btn');
-            if (buttonElement) buttonElement.setAttribute('aria-expanded', 'true');
+            if (dropdown) {
+                // Open the dropdown
+                dropdown.classList.add('show');
+
+                // Scroll to the dropdown
+                dropdown.scrollIntoView({ behavior: 'smooth' });
+
+                // Update aria-expanded for accessibility
+                const buttonElement = dropdown.previousElementSibling.querySelector('.dropdown-btn');
+                if (buttonElement) {
+                    buttonElement.setAttribute('aria-expanded', 'true');
+                }
+            }
         }
     }
 
-    // Attach dropdown toggle listeners to buttons
+    // Attach event listeners to dropdown buttons
     const dropdownButtons = document.querySelectorAll('.dropdown-btn');
     dropdownButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -66,4 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleDropdown(dropdownId, button);
         });
     });
+
+    // Automatically open the correct dropdown if navigated with query parameters
+    openProjectDropdownFromQuery();
 });
