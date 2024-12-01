@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const speedPerSecond = 50; // Adjust this to set your desired constant speed
+    const speedPerSecond = 200; // Adjust this to set your desired constant speed
 
     // Function to calculate and set animation duration
     const updateAnimationSpeed = () => {
