@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Pause carousel on hover
         carouselContainer.addEventListener('mouseenter', () => {
             console.log('Mouse entered, pausing carousel take 7');
+            console.log('animationFrameId:', animationFrameId);
             if (animationFrameId !== null) {
                 cancelAnimationFrame(animationFrameId);
                 animationFrameId = null; // Indicate the animation is paused
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Resume carousel when hover ends
         carouselContainer.addEventListener('mouseleave', () => {
             console.log('Mouse left, resuming carousel');
+            console.log('animationFrameId:', animationFrameId);
             if (animationFrameId === null) {
                 animationFrameId = requestAnimationFrame(scrollCarousel);
             }
