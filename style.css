@@ -38,8 +38,11 @@ a:hover {
     gap: 0; /* No gap between images */
     white-space: nowrap;
     overflow: hidden;
+    will-change: transform; /* Optimize for smoother animations */
 }
-
+.carousel-container.paused {
+    animation-play-state: paused; /* Pause the animation */
+}
 .carousel-image {
     width: 330px; /* Image width */
     height: 330px; /* Image height */

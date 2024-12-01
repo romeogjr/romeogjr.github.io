@@ -1,47 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.querySelector('.carousel-container');
-    const images = document.querySelectorAll('.carousel-image');
-    let scrollPosition = 0;
-    let animationFrameId = null;
-    const scrollSpeed = 3;
 
-    if (carouselContainer && images.length > 0) {
-        // Scroll carousel function
-        function scrollCarousel() {
-            scrollPosition += scrollSpeed;
-            carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
-
-            // Reset scroll position if necessary (optional for seamless scroll)
-            if (scrollPosition >= carouselContainer.scrollWidth) {
-                scrollPosition = 0;
-            }
-
-            animationFrameId = requestAnimationFrame(scrollCarousel);
-        }
-
+    if (carouselContainer) {
         // Pause carousel on hover
         carouselContainer.addEventListener('mouseenter', () => {
-            console.log('Mouse entered, pausing carousel take 7');
-            console.log('animationFrameId:', animationFrameId);
-            if (animationFrameId !== null) {
-                cancelAnimationFrame(animationFrameId);
-                animationFrameId = null; // Indicate the animation is paused
-            }
+            console.log('Mouse came in, pausing carousel');
+            carouselContainer.classList.add('paused');
         });
 
         // Resume carousel when hover ends
         carouselContainer.addEventListener('mouseleave', () => {
             console.log('Mouse left, resuming carousel');
-            console.log('animationFrameId:', animationFrameId);
-            if (animationFrameId === null) {
-                animationFrameId = requestAnimationFrame(scrollCarousel);
-            }
+            carouselContainer.classList.remove('paused');
         });
-
-        // Start the carousel
-        animationFrameId = requestAnimationFrame(scrollCarousel);
     } else {
-        console.warn('Carousel container or images not found.');
+        console.warn('Carousel container not found.');
     }
 
     // Dropdown Toggle Function
