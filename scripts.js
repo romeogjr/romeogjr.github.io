@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateAnimationSpeed(); // Initial call to set the speed
 
-    // Add clones every 23 seconds
+    // Add clones every 22 seconds
     setInterval(() => {
         addClones(); // Add new clones
         cleanupOldImages(); // Optional: Clean up old images
-    }, 23000);
+    }, 22000);
 
 
     // Dropdown Toggle Function
