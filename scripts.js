@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const speedPerSecond = 200; // Adjust this to set your desired constant speed
+    const speedPerSecond = 100; // Adjust this to set your desired constant speed
 
     // Function to calculate and set animation duration
     const updateAnimationSpeed = () => {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
         addClones(); // Add new clones
         cleanupOldImages(); // Optional: Clean up old images
-    }, 5000);
+    }, 10000);
 
 
     // Dropdown Toggle Function
