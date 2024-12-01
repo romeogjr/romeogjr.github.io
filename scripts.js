@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.querySelector('.carousel-container');
+    console.log("fix attempt 9");
 
     // this does the pausing
     if (carouselContainer) {
