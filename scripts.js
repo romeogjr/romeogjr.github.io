@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Carousel Initialization
     const carouselContainer = document.querySelector('.carousel-container');
     const images = document.querySelectorAll('.carousel-image');
     let scrollPosition = 0;
@@ -16,16 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalImages = images.length; // Original number of images
         const totalWidth = imageWidth * totalImages; // Total width of original images
 
+        // Function to scroll the carousel
         function scrollCarousel() {
             if (!isCarouselPaused) {
-                scrollPosition += 1; // Adjust scroll speed here
+                scrollPosition += 3; // Adjust scroll speed here
                 carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
 
                 // Reset scroll position when reaching the end of the original images
                 if (scrollPosition >= totalWidth) {
                     scrollPosition = 0; // Reset to the start
                     carouselContainer.style.transition = 'none'; // Disable transition for seamless reset
-                    carouselContainer.style.transform = `translateX(0)`;
+                    carouselContainer.style.transform = `translateX(0px)`;
 
                     // Trigger reflow and re-enable transition
                     requestAnimationFrame(() => {
@@ -33,17 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
             }
-            requestAnimationFrame(scrollCarousel); // Keep the animation running
+            // Continuously call scrollCarousel only when not paused
+            if (!isCarouselPaused) {
+                requestAnimationFrame(scrollCarousel);
+            }
         }
 
         // Pause carousel on hover
         carouselContainer.addEventListener('mouseenter', () => {
+            console.log('Mouse entered, pausing carousel');
             isCarouselPaused = true;
+            carouselContainer.style.transition = 'none'; // Stop smooth scrolling
         });
+
+        // Resume carousel when hover ends
         carouselContainer.addEventListener('mouseleave', () => {
+            console.log('Mouse left, resuming carousel');
             isCarouselPaused = false;
+            carouselContainer.style.transition = 'transform 0.5s linear'; // Reapply smooth scrolling
+            scrollCarousel(); // Ensure scrolling resumes
         });
-        
+
         // Start scrolling
         carouselContainer.style.transition = 'transform 0.5s linear'; // Smooth transition for scrolling
         scrollCarousel();
