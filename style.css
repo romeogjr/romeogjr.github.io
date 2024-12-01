@@ -36,6 +36,8 @@ a:hover {
     animation: scroll 60s linear infinite; /* Adjust timing for all images */
     width: calc(330px * 20); /* Total width = image width * number of images */
     gap: 0; /* No gap between images */
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .carousel-image {
@@ -43,6 +45,7 @@ a:hover {
     height: 330px; /* Image height */
     object-fit: cover; /* Keeps the images proportional */
     flex-shrink: 0; /* Prevents images from shrinking */
+    flex: 0 0 auto;
 }
 
 /* Smooth Scrolling Animation */
