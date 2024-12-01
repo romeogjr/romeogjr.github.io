@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.querySelector('.carousel-container');
-    console.log("fix attempt 11");
+    console.log("fix attempt 12");
 
     // this does the pausing
     if (carouselContainer) {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('Carousel container not found.');
     }
 
-    const images = Array.from(container.children);
+    const images = Array.from(carouselContainer.children);
 
     // Clone images to create seamless loop
     images.forEach(image => {
