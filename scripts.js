@@ -33,27 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     carouselContainer.style.transition = 'transform 0.5s linear';
                 });
             }
+            // Pause carousel on hover
+            carouselContainer.addEventListener('mouseenter', () => {
+                console.log('Mouse entered, pausing carousel pleaseee');
+                if (animationFrameId !== null) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null; // Indicate that the animation is paused
+                }
+            });
 
-            animationFrameId = requestAnimationFrame(scrollCarousel);
+            // Resume carousel when hover ends
+            carouselContainer.addEventListener('mouseleave', () => {
+                console.log('Mouse left, resuming the damn thing');
+                if (animationFrameId === null) {
+                    carouselContainer.style.transition = 'transform 0.5s linear';
+                    animationFrameId = requestAnimationFrame(scrollCarousel);
+                }
+            });
+
         }
-
-        // Pause carousel on hover
-        carouselContainer.addEventListener('mouseenter', () => {
-            console.log('Mouse entered, pausing carousel');
-            if (animationFrameId !== null) {
-                cancelAnimationFrame(animationFrameId);
-                animationFrameId = null; // Indicate that the animation is paused
-            }
-        });
-
-        // Resume carousel when hover ends
-        carouselContainer.addEventListener('mouseleave', () => {
-            console.log('Mouse left, resuming the damn thing');
-            if (animationFrameId === null) {
-                carouselContainer.style.transition = 'transform 0.5s linear';
-                animationFrameId = requestAnimationFrame(scrollCarousel);
-            }
-        });
 
         // Start the carousel
         carouselContainer.style.transition = 'transform 0.5s linear';
