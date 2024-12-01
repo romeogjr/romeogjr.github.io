@@ -56,12 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function openDropdownFromQuery() {
         const params = new URLSearchParams(window.location.search);
         const dropdownId = params.get('dropdown'); // Get 'dropdown' parameter
+        const button = document.querySelector(`[aria-controls="dropdown${dropdownId}"]`);
 
-        if (dropdownId) {
+        if (dropdownId && button) {
             const dropdown = document.getElementById(`dropdown${dropdownId}`);
             if (dropdown) {
                 dropdown.classList.add('show'); // Open the dropdown
-                dropdown.scrollIntoView({ behavior: 'smooth' });
+                dropdown.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
     }
