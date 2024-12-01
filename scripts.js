@@ -7,30 +7,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (carouselContainer && images.length > 0) {
         // Clone images for seamless looping
+        const imageWidth = images[0].clientWidth; // Width of a single image
         images.forEach(image => {
             const clone = image.cloneNode(true);
             carouselContainer.appendChild(clone);
         });
 
-        const imageWidth = images[0].clientWidth;
-        const totalWidth = imageWidth * images.length;
+        const totalImages = images.length; // Original number of images
+        const totalWidth = imageWidth * totalImages; // Total width of original images
 
         function scrollCarousel() {
             if (!isCarouselPaused) {
-                scrollPosition += 1;
-                if (scrollPosition >= totalWidth) {
-                    scrollPosition = 0; // Reset to the beginning
-                }
+                scrollPosition += 1; // Adjust scroll speed here
                 carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
+
+                // Reset scroll position when reaching the end of the original images
+                if (scrollPosition >= totalWidth) {
+                    scrollPosition = 0; // Reset to the start
+                    carouselContainer.style.transition = 'none'; // Disable transition for seamless reset
+                    carouselContainer.style.transform = `translateX(0)`;
+
+                    // Trigger reflow and re-enable transition
+                    requestAnimationFrame(() => {
+                        carouselContainer.style.transition = 'transform 0.5s linear'; // Reapply transition
+                    });
+                }
             }
-            requestAnimationFrame(scrollCarousel);
+            requestAnimationFrame(scrollCarousel); // Keep the animation running
         }
 
         // Pause carousel on hover
         carouselContainer.addEventListener('mouseover', () => (isCarouselPaused = true));
         carouselContainer.addEventListener('mouseout', () => (isCarouselPaused = false));
 
-        scrollCarousel(); // Start scrolling
+        // Start scrolling
+        carouselContainer.style.transition = 'transform 0.5s linear'; // Smooth transition for scrolling
+        scrollCarousel();
     } else {
         console.warn('Carousel container or images not found.');
     }
