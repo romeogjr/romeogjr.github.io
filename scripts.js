@@ -37,9 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Pause carousel on hover
-        carouselContainer.addEventListener('mouseover', () => (isCarouselPaused = true));
-        carouselContainer.addEventListener('mouseout', () => (isCarouselPaused = false));
-
+        carouselContainer.addEventListener('mouseenter', () => {
+            isCarouselPaused = true;
+        });
+        carouselContainer.addEventListener('mouseleave', () => {
+            isCarouselPaused = false;
+        });
+        
         // Start scrolling
         carouselContainer.style.transition = 'transform 0.5s linear'; // Smooth transition for scrolling
         scrollCarousel();
