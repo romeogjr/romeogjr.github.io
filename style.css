@@ -39,6 +39,7 @@ a:hover {
     white-space: nowrap;
     overflow: hidden;
     will-change: transform; /* Optimize for smoother animations */
+    position:  relative;
 }
 .carousel-container.paused {
     animation-play-state: paused; /* Pause the animation */
@@ -52,9 +53,9 @@ a:hover {
 }
 
 /* Smooth Scrolling Animation */
-@keyframes scroll {
+@keyframes infinite-scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); } /* Scrolls the entire width */
+    100% { transform: translateX(-330px * 20); } /* Scrolls the entire width of 20 images at 330 pixels each */
 }
 
 /* Intro Section */

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.querySelector('.carousel-container');
-    console.log("fix attempt 9");
+    console.log("fix attempt 10");
 
     // this does the pausing
     if (carouselContainer) {
@@ -17,19 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else {
         console.warn('Carousel container not found.');
-    }
-
-    // this does the sliding and duplicating
-    const images = Array.from(document.querySelectorAll('.carousel-image'));
-
-    if (carouselContainer && images.length > 0) {
-        // Duplicate images to create a seamless effect
-        images.forEach(image => {
-            const clone = image.cloneNode(true);
-            carouselContainer.appendChild(clone);
-        });
-    } else {
-        console.warn('Carousel container or images not found.');
     }
 
 
