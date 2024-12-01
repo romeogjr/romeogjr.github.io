@@ -1,72 +1,70 @@
 document.addEventListener('DOMContentLoaded', () => {
+    initializeCarousel();
+    initializeDropdowns();
+});
+
+function initializeCarousel() {
     const carouselContainer = document.querySelector('.carousel-container');
     console.log("fix attempt 14, initialize speed part 2");
 
-    // this does the pausing
-    if (carouselContainer) {
-        // Pause carousel on hover
-        carouselContainer.addEventListener('mouseenter', () => {
-            console.log('Mouse came in, pausing carousel');
-            carouselContainer.classList.add('paused');
-        });
-
-        // Resume carousel when hover ends
-        carouselContainer.addEventListener('mouseleave', () => {
-            console.log('Mouse left, resuming carousel');
-            carouselContainer.classList.remove('paused');
-        });
-    } else {
+    if (!carouselContainer) {
         console.warn('Carousel container not found.');
+        return;
     }
-
 
     const speedPerSecond = 100; // Adjust this to set your desired constant speed
 
-    // Function to calculate and set animation duration
     const updateAnimationSpeed = () => {
-        const containerWidth = carouselContainer.offsetWidth; // Total width of the carousel
-        const duration = containerWidth / speedPerSecond; // Time (in seconds) to scroll the entire width
-        carouselContainer.style.animationDuration = `${duration}s`; // Set the animation duration dynamically
+        const containerWidth = carouselContainer.offsetWidth;
+        const duration = containerWidth / speedPerSecond;
+        carouselContainer.style.animationDuration = `${duration}s`;
         console.log("adjusting speed");
     };
 
-
     const addClones = () => {
-        const images = Array.from(document.querySelectorAll('.carousel-image')); // Select all current images
+        const images = Array.from(document.querySelectorAll('.carousel-image'));
         console.log("adding clones");
         images.forEach(image => {
-            const clone = image.cloneNode(true); // Clone the image
-            carouselContainer.appendChild(clone); // Append the clone to the container
+            const clone = image.cloneNode(true);
+            carouselContainer.appendChild(clone);
         });
 
-        // Dynamically adjust the container's width
-        const imageWidth = images[0].offsetWidth; // Width of a single image
-        const totalImages = carouselContainer.children.length; // Total number of images in the container
-        carouselContainer.style.width = `${imageWidth * totalImages}px`; // Adjust container width
+        const imageWidth = images[0].offsetWidth;
+        const totalImages = carouselContainer.children.length;
+        carouselContainer.style.width = `${imageWidth * totalImages}px`;
 
         updateAnimationSpeed();
     };
 
-    // Function to clean up old images (to prevent memory issues)
     const cleanupOldImages = () => {
         const allImages = carouselContainer.querySelectorAll('.carousel-image');
-        if (allImages.length > 100) { // Keep the total number of images manageable
+        if (allImages.length > 100) {
             for (let i = 0; i < 20; i++) {
-                allImages[i].remove(); // Remove the oldest 20 images
+                allImages[i].remove();
             }
         }
     };
 
-    updateAnimationSpeed(); // Initial call to set the speed
+    // Pause/resume carousel on hover
+    carouselContainer.addEventListener('mouseenter', () => {
+        console.log('Mouse came in, pausing carousel');
+        carouselContainer.classList.add('paused');
+    });
 
-    // Add clones every 22 seconds
+    carouselContainer.addEventListener('mouseleave', () => {
+        console.log('Mouse left, resuming carousel');
+        carouselContainer.classList.remove('paused');
+    });
+
+    updateAnimationSpeed();
+
     setInterval(() => {
-        addClones(); // Add new clones
-        cleanupOldImages(); // Optional: Clean up old images
+        addClones();
+        cleanupOldImages();
     }, 22000);
+}
 
-
-    // Dropdown Toggle Function
+function initializeDropdowns() {
     function toggleDropdown(dropdownId, buttonElement) {
         const dropdown = document.getElementById(dropdownId);
         if (dropdown) {
@@ -75,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Attach event listeners to dropdown buttons
     document.querySelectorAll('.dropdown-btn').forEach(button => {
         button.addEventListener('click', () => {
             const dropdownId = button.getAttribute('aria-controls');
@@ -83,23 +80,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Open dropdown based on query parameter
-    function openDropdownFromQuery() {
-        const params = new URLSearchParams(window.location.search);
-        const dropdownId = params.get('dropdown'); // Get 'dropdown' parameter
+    openDropdownFromQuery();
+}
 
-        if (dropdownId) {
-            const dropdown = document.getElementById(`dropdown${dropdownId}`);
-            const button = document.querySelector(`[aria-controls="dropdown${dropdownId}"]`);
-            const projectContainer = button.closest('.project'); // Find the parent project container
-    
-            if (dropdown && button && projectContainer) {
-                dropdown.classList.add('show'); // Open the dropdown
-                button.setAttribute('aria-expanded', 'true'); // Update button state
-                projectContainer.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scroll to the project container
-            }
+function openDropdownFromQuery() {
+    const params = new URLSearchParams(window.location.search);
+    const dropdownId = params.get('dropdown');
+    console.log('Dropdown query parameter:', dropdownId);
+
+    if (dropdownId) {
+        const dropdown = document.getElementById(`dropdown${dropdownId}`);
+        const button = document.querySelector(`[aria-controls="dropdown${dropdownId}"]`);
+        const projectContainer = button?.closest('.project');
+
+        if (dropdown && button && projectContainer) {
+            dropdown.classList.add('show');
+            button.setAttribute('aria-expanded', 'true');
+            projectContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            console.log('Dropdown opened:', dropdownId);
+        } else {
+            console.warn('Dropdown or button not found for id:', dropdownId);
         }
     }
-
-    openDropdownFromQuery(); // Automatically open dropdown if query parameter exists
-});
+}
