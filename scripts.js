@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.querySelector('.carousel-container');
-    console.log("fix attempt 12");
+    console.log("fix attempt 14");
 
     // this does the pausing
     if (carouselContainer) {
@@ -27,12 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const containerWidth = carouselContainer.offsetWidth; // Total width of the carousel
         const duration = containerWidth / speedPerSecond; // Time (in seconds) to scroll the entire width
         carouselContainer.style.animationDuration = `${duration}s`; // Set the animation duration dynamically
+        console.log("adjusting speed");
     };
 
 
     const addClones = () => {
         const images = Array.from(document.querySelectorAll('.carousel-image')); // Select all current images
-
+        console.log("adding clones");
         images.forEach(image => {
             const clone = image.cloneNode(true); // Clone the image
             carouselContainer.appendChild(clone); // Append the clone to the container
