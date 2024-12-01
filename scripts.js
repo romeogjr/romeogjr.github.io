@@ -6,55 +6,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollSpeed = 3;
 
     if (carouselContainer && images.length > 0) {
-        const imageWidth = images[0].clientWidth;
-
-        // Clone images to create a seamless loop
-        images.forEach(image => {
-            const clone = image.cloneNode(true);
-            carouselContainer.appendChild(clone);
-        });
-
-        const totalImages = images.length * 2; // Account for cloned images
-        const totalWidth = imageWidth * totalImages;
-
         // Scroll carousel function
         function scrollCarousel() {
             scrollPosition += scrollSpeed;
             carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
 
-            // Reset position when reaching the end
-            if (scrollPosition >= totalWidth / 2) {
+            // Reset scroll position if necessary (optional for seamless scroll)
+            if (scrollPosition >= carouselContainer.scrollWidth) {
                 scrollPosition = 0;
-                carouselContainer.style.transition = 'none';
-                carouselContainer.style.transform = `translateX(0px)`;
-
-                // Re-enable transition after resetting
-                requestAnimationFrame(() => {
-                    carouselContainer.style.transition = 'transform 0.5s linear';
-                });
             }
-            // Pause carousel on hover
-            carouselContainer.addEventListener('mouseenter', () => {
-                console.log('Mouse entered, pausing carousel pleaseee');
-                if (animationFrameId !== null) {
-                    cancelAnimationFrame(animationFrameId);
-                    animationFrameId = null; // Indicate that the animation is paused
-                }
-            });
 
-            // Resume carousel when hover ends
-            carouselContainer.addEventListener('mouseleave', () => {
-                console.log('Mouse left, resuming the damn thing');
-                if (animationFrameId === null) {
-                    carouselContainer.style.transition = 'transform 0.5s linear';
-                    animationFrameId = requestAnimationFrame(scrollCarousel);
-                }
-            });
-
+            animationFrameId = requestAnimationFrame(scrollCarousel);
         }
 
+        // Pause carousel on hover
+        carouselContainer.addEventListener('mouseenter', () => {
+            console.log('Mouse entered, pausing carousel take 7');
+            if (animationFrameId !== null) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null; // Indicate the animation is paused
+            }
+        });
+
+        // Resume carousel when hover ends
+        carouselContainer.addEventListener('mouseleave', () => {
+            console.log('Mouse left, resuming carousel');
+            if (animationFrameId === null) {
+                animationFrameId = requestAnimationFrame(scrollCarousel);
+            }
+        });
+
         // Start the carousel
-        carouselContainer.style.transition = 'transform 0.5s linear';
         animationFrameId = requestAnimationFrame(scrollCarousel);
     } else {
         console.warn('Carousel container or images not found.');
