@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.querySelector('.carousel-container');
-    console.log("fix attempt 14, adjusting speed");
+    console.log("fix attempt 14, initialize speed");
 
     // this does the pausing
     if (carouselContainer) {
@@ -57,11 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    updateAnimationSpeed(); // Initial call to set the speed
+
     // Add clones every 30 seconds
     setInterval(() => {
         addClones(); // Add new clones
         cleanupOldImages(); // Optional: Clean up old images
-    }, 30000);
+    }, 31000);
 
 
     // Dropdown Toggle Function
