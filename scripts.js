@@ -19,18 +19,51 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('Carousel container not found.');
     }
 
-    const images = Array.from(carouselContainer.children);
 
-    // Clone images to create seamless loop
-    images.forEach(image => {
-        const clone = image.cloneNode(true);
-        carouselContainer.appendChild(clone);
-    });
+    const speedPerSecond = 50; // Adjust this to set your desired constant speed
 
-    // Adjust container width dynamically to accommodate duplicated images
-    const totalImages = carouselContainer.children.length; // Original + Clones
-    const imageWidth = images[0].offsetWidth; // Width of a single image
-    carouselContainer.style.width = `${imageWidth * totalImages}px`; // Total width
+    // Function to calculate and set animation duration
+    const updateAnimationSpeed = () => {
+        const containerWidth = carouselContainer.offsetWidth; // Total width of the carousel
+        const duration = containerWidth / speedPerSecond; // Time (in seconds) to scroll the entire width
+        carouselContainer.style.animationDuration = `${duration}s`; // Set the animation duration dynamically
+    };
+
+
+    const addClones = () => {
+        const images = Array.from(document.querySelectorAll('.carousel-image')); // Select all current images
+
+        images.forEach(image => {
+            const clone = image.cloneNode(true); // Clone the image
+            carouselContainer.appendChild(clone); // Append the clone to the container
+        });
+
+        // Dynamically adjust the container's width
+        const imageWidth = images[0].offsetWidth; // Width of a single image
+        const totalImages = carouselContainer.children.length; // Total number of images in the container
+        carouselContainer.style.width = `${imageWidth * totalImages}px`; // Adjust container width
+
+        updateAnimationSpeed();
+    };
+
+    // Function to clean up old images (to prevent memory issues)
+    const cleanupOldImages = () => {
+        const allImages = carouselContainer.querySelectorAll('.carousel-image');
+        if (allImages.length > 100) { // Keep the total number of images manageable
+            for (let i = 0; i < 20; i++) {
+                allImages[i].remove(); // Remove the oldest 20 images
+            }
+        }
+    };
+
+    // Add initial clones to start with enough content
+    addClones();
+
+    // Add clones every 10 seconds
+    setInterval(() => {
+        addClones(); // Add new clones
+        cleanupOldImages(); // Optional: Clean up old images
+    }, 5000);
 
 
     // Dropdown Toggle Function

@@ -33,7 +33,7 @@ a:hover {
 
 .carousel-container {
     display: flex;
-    animation: scroll 60s linear infinite; /* Adjust timing for all images */
+    animation: scroll linear infinite;
     width: calc(330px * 20); /* Total width = image width * number of images */
     gap: 0; /* No gap between images */
     white-space: nowrap;
