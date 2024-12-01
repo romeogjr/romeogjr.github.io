@@ -2,60 +2,62 @@ document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.querySelector('.carousel-container');
     const images = document.querySelectorAll('.carousel-image');
     let scrollPosition = 0;
-    let animationFrameId = null; // Store the requestAnimationFrame ID
-    const scrollSpeed = 3; // Adjust scroll speed here
-
+    let animationFrameId = null;
+    const scrollSpeed = 3;
+    
     if (carouselContainer && images.length > 0) {
-        // Clone images for seamless looping
-        const imageWidth = images[0].clientWidth; // Width of a single image
+        const imageWidth = images[0].clientWidth;
         images.forEach(image => {
             const clone = image.cloneNode(true);
             carouselContainer.appendChild(clone);
         });
-
-        const totalImages = images.length; // Original number of images
-        const totalWidth = imageWidth * totalImages; // Total width of original images
-
-        // Function to scroll the carousel
+        
+        const totalImages = images.length;
+        const totalWidth = imageWidth * totalImages;
+        
+        // Modified scrollCarousel function to check if animation should continue
         function scrollCarousel() {
-            scrollPosition += scrollSpeed;
-            carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
-
-            // Reset scroll position when reaching the end of the original images
-            if (scrollPosition >= totalWidth) {
-                scrollPosition = 0; // Reset to the start
-                carouselContainer.style.transition = 'none'; // Disable transition for seamless reset
-                carouselContainer.style.transform = `translateX(0px)`;
-
-                // Trigger reflow and re-enable transition
-                requestAnimationFrame(() => {
-                    carouselContainer.style.transition = 'transform 0.5s linear'; // Reapply transition
-                });
+            // Only scroll if no animation frame is currently paused
+            if (animationFrameId !== null) {
+                scrollPosition += scrollSpeed;
+                carouselContainer.style.transform = `translateX(-${scrollPosition}px)`;
+                
+                if (scrollPosition >= totalWidth) {
+                    scrollPosition = 0;
+                    carouselContainer.style.transition = 'none';
+                    carouselContainer.style.transform = `translateX(0px)`;
+                    
+                    requestAnimationFrame(() => {
+                        carouselContainer.style.transition = 'transform 0.5s linear';
+                    });
+                }
+                
+                // Only request next animation frame if not paused
+                animationFrameId = requestAnimationFrame(scrollCarousel);
             }
-
-            // Continuously call scrollCarousel
-            animationFrameId = requestAnimationFrame(scrollCarousel);
         }
-
+        
         // Pause carousel on hover
         carouselContainer.addEventListener('mouseenter', () => {
             console.log('Mouse entered, pausing carousel');
-            cancelAnimationFrame(animationFrameId); // Stop the animation loop
-            animationFrameId = null; // Clear the animation frame ID
+            if (animationFrameId !== null) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
         });
-
+        
         // Resume carousel when hover ends
         carouselContainer.addEventListener('mouseleave', () => {
             console.log('Mouse left, resuming carousel');
-            if (!animationFrameId) { // Start animation loop only if not already running
-                carouselContainer.style.transition = 'transform 0.5s linear'; // Reapply smooth scrolling
-                scrollCarousel();
+            if (animationFrameId === null) {
+                carouselContainer.style.transition = 'transform 0.5s linear';
+                animationFrameId = requestAnimationFrame(scrollCarousel);
             }
         });
-
-        // Start scrolling
-        carouselContainer.style.transition = 'transform 0.5s linear'; // Smooth transition for scrolling
-        scrollCarousel();
+        
+        // Initial start of scrolling
+        carouselContainer.style.transition = 'transform 0.5s linear';
+        animationFrameId = requestAnimationFrame(scrollCarousel);
     } else {
         console.warn('Carousel container or images not found.');
     }
