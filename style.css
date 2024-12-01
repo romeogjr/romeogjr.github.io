@@ -53,7 +53,7 @@ a:hover {
 }
 
 /* Smooth Scrolling Animation */
-@keyframes infinite-scroll {
+@keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-330px * 20); } /* Scrolls the entire width of 20 images at 330 pixels each */
 }

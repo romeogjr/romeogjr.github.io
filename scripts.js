@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.querySelector('.carousel-container');
-    console.log("fix attempt 10");
+    console.log("fix attempt 11");
 
     // this does the pausing
     if (carouselContainer) {
@@ -18,6 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn('Carousel container not found.');
     }
+
+    const images = Array.from(container.children);
+
+    // Clone images to create seamless loop
+    images.forEach(image => {
+        const clone = image.cloneNode(true);
+        carouselContainer.appendChild(clone);
+    });
+
+    // Adjust container width dynamically to accommodate duplicated images
+    const totalImages = carouselContainer.children.length; // Original + Clones
+    const imageWidth = images[0].offsetWidth; // Width of a single image
+    carouselContainer.style.width = `${imageWidth * totalImages}px`; // Total width
 
 
     // Dropdown Toggle Function
