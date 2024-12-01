@@ -56,13 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function openDropdownFromQuery() {
         const params = new URLSearchParams(window.location.search);
         const dropdownId = params.get('dropdown'); // Get 'dropdown' parameter
-        const button = document.querySelector(`[aria-controls="dropdown${dropdownId}"]`);
 
-        if (dropdownId && button) {
+        if (dropdownId) {
             const dropdown = document.getElementById(`dropdown${dropdownId}`);
-            if (dropdown) {
+            const button = document.querySelector(`[aria-controls="dropdown${dropdownId}"]`);
+            const projectContainer = button.closest('.project'); // Find the parent project container
+    
+            if (dropdown && button && projectContainer) {
                 dropdown.classList.add('show'); // Open the dropdown
-                dropdown.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                button.setAttribute('aria-expanded', 'true'); // Update button state
+                projectContainer.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scroll to the project container
             }
         }
     }
