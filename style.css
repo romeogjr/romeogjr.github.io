@@ -22,11 +22,49 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Navigation Bar */
+nav {
+    display: flex; /* Flexbox for alignment */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    padding: 1rem 3rem; /* Increase padding for more space around the nav */
+    background-color: #fff; /* Adjust background as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+/* Navigation Logo */
+.nav-logo {
+    font-size: 2.3rem; /* Adjust size if necessary */
+    font-weight: bold;
+    color: #355E3B; /* Hunter green */
+    margin-left: 1.25rem; /* Increase left margin to push it farther right */
+    cursor: pointer; /* Makes the logo clickable */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 2rem; /* Spacing between links */
+    margin-left: auto; /* Push links to the far right */
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #555; /* Link color */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #355E3B; /* Hunter green on hover */
+}
+
+
 /* Carousel Section */
 #carousel {
     overflow: hidden; /* Hides any content outside the container */
     max-width: 100%;
-    height: 300px; /* Adjust the height to fit your images */
+    height: 320px; /* Adjust the height to fit your images */
     margin-bottom: 2rem;
     position: relative;
 }
@@ -45,8 +83,8 @@ a:hover {
     animation-play-state: paused; /* Pause the animation */
 }
 .carousel-image {
-    width: 330px; /* Image width */
-    height: 330px; /* Image height */
+    width: 350px; /* Image width */
+    height: 370px; /* Image height */
     object-fit: cover; /* Keeps the images proportional */
     flex-shrink: 0; /* Prevents images from shrinking */
     flex: 0 0 auto;
@@ -104,61 +142,97 @@ a:hover {
     margin: 0 auto; /* Center the grid on the page */
 }
 .project-tile {
-    width: 100%; /* Ensure it takes the full grid column width */
-    height: 260px; /* Fixed height for consistency */
+    width: 100%; /* Full grid column width */
+    height: 400px; /* Consistent fixed height */
     border-radius: 15px; /* Rounded corners */
-    background-color: #555; /* Fallback background */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Default shadow */
-    text-decoration: none; /* Remove underline */
+    background-color: #1a1a1a; /* Near-black fallback background */
+    box-shadow: 0 4px 10px #0000001a; /* Subtle shadow */
+    text-decoration: none; /* No underline */
     color: inherit; /* Inherit text color */
-    position: relative; /* Allow for precise positioning */
-    border-radius: 15px; /* Rounded corners */
-    overflow: hidden; /* Clip any overflowing content */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Default shadow */
+    position: relative; /* Precise positioning for children */
+    overflow: hidden; /* Clip overflowing content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
     display: flex;
     align-items: center;
-    justify-content: center;
-}   
+    justify-content: center; /* Center content */
+}
 
 .project-tile:hover {
-    transform: translateY(-5px); /* Move the tile up slightly */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Add a larger shadow */
-    text-decoration: none; /* Ensure no underline appears on hover */
+    transform: translateY(-5px); /* Subtle upward motion */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+    text-decoration: none; /* Keep hover clean */
 }
 
+/* Image on the left */
+.project-imagespa {
+    clip-path: inset(0% 10% 0% 2%); /* Crop top, right, bottom, left */
+    width: 80%; /* Image takes 50% of the width */
+    height: 100%; /* Full height of the tile */
+    background-size: cover; /* Ensure the image covers its container */
+    background-position: center; /* Center the image */
+    justify-content: right; /* Align text to the left */
+}
 
+.project-imagemecha {
+    width: 75%; /* Image takes 50% of the width */
+    height: 100%; /* Full height of the tile */
+    background-size: cover; /* Ensure the image covers its container */
+    background-position: center; /* Center the image */
+    justify-content: right; /* Align text to the left */
+    margin-left: -100px; 
+}
+.project-imagehome {
+    width: 51%; /* Image takes 50% of the width */
+    height: 355px; /* Full height of the tile */
+    background-size: cover; /* Ensure the image covers its container */
+}
 
-
-.project-image {
-    width: 100%; /* Fill the tile width */
-    height: 100%; /* Fill the tile height */
-    border-radius: 15px; /* Match parent radius */
-    object-fit: cover; /* Ensure content inside fits proportionally */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff; /* Text color */
+/* Title on the right */
+.project-titlespa{
+    display: flex; /* Use flexbox to center text */
+    align-items: center; /* Vertically align the text */
+    justify-content: left; /* Align text to the left */
+    text-align: left; /* Center-align the text */
     font-size: 1.5rem; /* Title font size */
-    text-align: center;
+    font-weight: 600; /* Bold title */
+    color: #fff; /* White text */
+    margin-left: -50px;
 }
 
-/* Project Title */
-.project-image h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
-    margin: 0;
-    text-align: center;
-    pointer-events: none; /* Prevents hover effects on the title */
+.project-titlemecha{
+    width: 31%; /* Image takes 50% of the width */
+    display: flex; /* Use flexbox to center text */
+    align-items: center; /* Vertically align the text */
+    justify-content: right; 
+    text-align: right; /* Center-align the text */
+    font-size: 1.5rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #fff; /* White text */
 }
+
+.project-titlehome{
+    width: 45%; /* Image takes 50% of the width */
+    display: flex; /* Use flexbox to center text */
+    align-items: center; /* Vertically align the text */
+    justify-content: center; 
+    text-align: center; /* Center-align the text */
+    font-size: 1.5rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #fff; /* White text */
+}
+
+.project-titlehome h3 {
+    display: block;
+    justify-content: center; 
+}
+
 .project-tile h3 a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit text color from parent */
+    text-decoration: none; /* No underline */
+    color: inherit; /* Inherit parent color */
 }
 
 .project-tile h3 a:hover {
-    text-decoration: none; /* Ensure underline does not appear on hover */
+    text-decoration: none; /* Keep clean hover */
 }
 
 .project-tile {
@@ -182,46 +256,11 @@ a:hover {
     100% { transform: translateX(-200%); } /* Adjust for 20 images */
 }
 
-/* Navigation Bar */
-nav {
-    display: flex; /* Flexbox for alignment */
-    justify-content: flex-start; /* Align items to the left */
-    align-items: center;
-    padding: 1rem 3rem; /* Increase padding for more space around the nav */
-    background-color: #fff; /* Adjust background as needed */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
-}
 
-/* Navigation Logo */
-.nav-logo {
-    font-size: 2.3rem; /* Adjust size if necessary */
-    font-weight: bold;
-    color: #355E3B; /* Hunter green */
-    margin-left: 1.25rem; /* Increase left margin to push it farther right */
-    cursor: pointer; /* Makes the logo clickable */
-}
-
-/* Navigation Links */
-.nav-links {
-    display: flex;
-    gap: 2rem; /* Spacing between links */
-    margin-left: auto; /* Push links to the far right */
-}
-
-.nav-links a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #555; /* Link color */
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #355E3B; /* Hunter green on hover */
-}
 
 /* Header Styling */
 header {
-    height: 150px;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,22 +269,17 @@ header {
     background-position: center;
     color: #fff;
     font-weight: 700;
-    font-size: 1.5rem;
-}
-
-/* Home Page Header */
-body.home-page header {
-    background-image: url('images/home-bg.jpg');
+    font-size: 2.2rem;
 }
 
 /* About Page Header */
 body.about-page header {
-    background-image: url('images/about-bg.jpg');
+    background-image: url('images/me.JPG');
 }
 
 /* Projects Page Header */
 body.projects-page header {
-    background-image: url('images/projects-bg.jpg');
+    background-image: url('images/brick.JPEG');
 }
 
 
@@ -265,22 +299,6 @@ section h2 {
     color: #333;
 }
 
-
-
-/* Header Section */
-header {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('images/about-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-}
 
 /* About Section */
 .about-container {
@@ -313,7 +331,7 @@ header {
 
 .about-image img {
     width: 100%;
-    max-width: 300px;
+    max-width: 370px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -437,6 +455,16 @@ header {
     margin-bottom: 1.5rem;
 }
 
+.project-image1 {
+    width: 370px; /* Increased size for larger images */
+    height: 400px;
+    background-color: #1a1a1a; /* Near-black fallback background */
+    border-radius: 20%; /* Circular shape */
+    object-fit: cover; /* Maintain aspect ratio */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+    flex-shrink: 0; /* Prevent image shrinking */
+}
+
 /* Dropdown Button */
 .dropdown-btn {
     display: inline-block;
@@ -469,20 +497,10 @@ header {
 }
 
 .dropdown-content.show {
-    max-height: 500px; /* Adjust this value based on your content height */
+    max-height: 700px; /* Adjust this value based on your content height */
     margin-top: 1.5rem; /* Restore margin */
     padding: 1.5rem; /* Restore padding */
     border-top: 1px solid #ddd; /* Restore border */
-}
-
-/* Circular Image */
-.project-image1 {
-    width: 300px; /* Increased size for larger images */
-    height: 300px;
-    border-radius: 50%; /* Circular shape */
-    object-fit: cover; /* Maintain aspect ratio */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
-    flex-shrink: 0; /* Prevent image shrinking */
 }
 
 .dropdown-content h3 {
@@ -500,8 +518,6 @@ header {
     margin: 0.75rem 0; /* More space between items */
 }
 
-
-/* Images Section at the Bottom */
 .dropdown-images {
     display: flex; /* Arrange images horizontally */
     justify-content: space-evenly; /* Distribute images evenly across the width */
@@ -510,10 +526,9 @@ header {
     margin-top: 1rem; /* Space above the images */
 }
 
-/* Individual Images */
 .dropdown-image {
-    width: 150px; /* Adjust image width */
-    height: 150px; /* Adjust image height */
+    width: 300px; /* Adjust image width */
+    height:300px; /* Adjust image height */
     object-fit: cover; /* Ensure images maintain their aspect ratio */
     border-radius: 8px; /* Optional: Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for better appearance */
@@ -522,7 +537,7 @@ header {
 /* Resume Section */
 #resume {
     text-align: center; /* Center the entire section */
-    max-width: 900px;
+    max-width: 1000px;
     margin: 3rem auto;
     padding: 2rem 1rem;
     background-color: #f9f9f9;
@@ -557,10 +572,10 @@ header {
 /* Resume Image Placeholder */
 .resume-image img {
     width: 100%; /* Make the image responsive */
-    max-width: 700px; /* Restrict maximum width */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around image */
 }
+
 /* Contact Section */
 #contact {
     text-align: center; /* Center-align text content */
