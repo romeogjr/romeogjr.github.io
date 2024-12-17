@@ -90,11 +90,12 @@ nav {
     flex: 0 0 auto;
 }
 
-/* Smooth Scrolling Animation */
+/* Carousel Animation */
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-330px * 20); } /* Scrolls the entire width of 20 images at 330 pixels each */
+    100% { transform: translateX(-200%); } /* Adjust for 20 images */
 }
+
 
 /* Intro Section */
 #intro {
@@ -156,14 +157,34 @@ nav {
     align-items: center;
     justify-content: center; /* Center content */
 }
+.project-tile1 {
+    width: 100%; /* Full grid column width */
+    height: 400px; /* Consistent fixed height */
+    border-radius: 15px; /* Rounded corners */
+    background-color: #8181813a; /* Near-black fallback background */
+    box-shadow: 0 4px 10px #0000001a; /* Subtle shadow */
+    text-decoration: none; /* No underline */
+    color: inherit; /* Inherit text color */
+    position: relative; /* Precise positioning for children */
+    overflow: hidden; /* Clip overflowing content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+}
 
 .project-tile:hover {
     transform: translateY(-5px); /* Subtle upward motion */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
     text-decoration: none; /* Keep hover clean */
 }
+.project-tile1:hover {
+    transform: translateY(-5px); /* Subtle upward motion */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+    text-decoration: none; /* Keep hover clean */
+}
 
-/* Image on the left */
+/* Project Images */
 .project-imagespa {
     clip-path: inset(0% 10% 0% 2%); /* Crop top, right, bottom, left */
     width: 80%; /* Image takes 50% of the width */
@@ -172,7 +193,18 @@ nav {
     background-position: center; /* Center the image */
     justify-content: right; /* Align text to the left */
 }
-
+.project-imageatlas { 
+    background-size: cover;
+    background-position: center;
+    width: 130%;
+    height: 110%;
+}
+.project-imageice {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
 .project-imagemecha {
     width: 75%; /* Image takes 50% of the width */
     height: 100%; /* Full height of the tile */
@@ -181,51 +213,188 @@ nav {
     justify-content: right; /* Align text to the left */
     margin-left: -100px; 
 }
+.project-imageslide {
+    width: 45%; /* Image takes 50% of the width */
+    height: 22.8rem; /* Full height of the tile */
+    background-size: cover; /* Ensure the image covers its container */
+    background-position: center; /* Center the image */
+    justify-content: right; /* Align text to the left */
+}
+.project-imagebottle {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 110%;
+}
+.project-imageshoe {
+    background-size: cover;
+    background-position: center;
+    width: 110%;
+    height: 120%;
+    transform: translateY(-20px);
+}
+.project-imagebanana { 
+    background-size: cover;
+    background-position: center;
+    width: 80%;
+    height: 90%;
+}
+.project-imageender {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 130%;
+    transform: translateY(-30px);
+}
 .project-imagehome {
     width: 51%; /* Image takes 50% of the width */
     height: 355px; /* Full height of the tile */
     background-size: cover; /* Ensure the image covers its container */
 }
+.project-imagevib {
+    width: 51%; /* Image takes 50% of the width */
+    height: 390px; /* Full height of the tile */
+    background-size: cover; /* Ensure the image covers its container */
+}
+.project-imagemcts {
+    clip-path: inset(0% 0.5% 0% 1%); /* Crop top, right, bottom, left */
+    width: 70%; /* Image takes 50% of the width */
+    height: 83%; /* Full height of the tile */
+    background-size: cover; /* Ensure the image covers its container */
+    border-radius: 1.75rem; /* Rounded corners */
+}
+.project-imageaero {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 130%;
+    transform: translateY(-30px);
+}
 
-/* Title on the right */
+
+/* Project Titles */
 .project-titlespa{
     display: flex; /* Use flexbox to center text */
     align-items: center; /* Vertically align the text */
     justify-content: left; /* Align text to the left */
     text-align: left; /* Center-align the text */
-    font-size: 1.5rem; /* Title font size */
+    font-size: 2rem; /* Title font size */
     font-weight: 600; /* Bold title */
     color: #fff; /* White text */
     margin-left: -50px;
 }
-
+.project-imageatlas h3 {
+    position: absolute; /* Absolute positioning to place the title */
+    top: 50%; /* Center vertically */
+    right: 7rem; /* 1rem from the right */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+    font-size: 2.5rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #fff; /* White text */
+    margin: 0; /* Remove default margin */
+    text-align: right; /* Align text to the right */
+}
+.project-imageice h3 {
+    font-size: 2.25rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #fff; /* White text */
+    text-align: center; /* Center-align the text */
+    margin-top: 2rem; /* Space between image and title */
+}
 .project-titlemecha{
-    width: 31%; /* Image takes 50% of the width */
+    width: 34%; /* Image takes 50% of the width */
     display: flex; /* Use flexbox to center text */
     align-items: center; /* Vertically align the text */
     justify-content: right; 
     text-align: right; /* Center-align the text */
-    font-size: 1.5rem; /* Title font size */
+    font-size: 1.75rem; /* Title font size */
     font-weight: 600; /* Bold title */
     color: #fff; /* White text */
 }
-
+.project-titleslide{
+    width: 25%; /* Image takes 50% of the width */
+    display: flex; /* Use flexbox to center text */
+    align-items: center; /* Vertically align the text */
+    justify-content: center; 
+    text-align: center; /* Center-align the text */
+    font-size: 2rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #fff; /* White text */
+    margin-left: 50px;
+}
+.project-imagebottle h3 {
+    font-size: 2.25rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #333; /* White text */
+    text-align: center; /* Center-align the text */
+    margin-top: 2.5rem; /* Space between image and title */
+}
+.project-imageshoe h3 {
+    position: absolute;
+    font-size: 1.85rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #1f1f1f; /* White text */
+    margin-top: 23.5rem; /* Space between image and title */
+    left: 1.6rem;
+}
+.project-titlebanana{
+    width: 30%; /* Image takes 50% of the width */
+    display: flex; /* Use flexbox to center text */
+    align-items: center; /* Vertically align the text */
+    justify-content: center; 
+    text-align: center; /* Center-align the text */
+    font-size: 1.75rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #333; /* White text */
+    margin-left: 10px;
+    padding-right: 1.75rem;
+}
 .project-titlehome{
     width: 45%; /* Image takes 50% of the width */
     display: flex; /* Use flexbox to center text */
     align-items: center; /* Vertically align the text */
     justify-content: center; 
     text-align: center; /* Center-align the text */
-    font-size: 1.5rem; /* Title font size */
+    font-size: 1.75rem; /* Title font size */
     font-weight: 600; /* Bold title */
     color: #fff; /* White text */
 }
-
-.project-titlehome h3 {
-    display: block;
+.project-titlevib{
+    width: 45%; /* Image takes 50% of the width */
+    display: flex; /* Use flexbox to center text */
+    align-items: center; /* Vertically align the text */
     justify-content: center; 
+    text-align: center; /* Center-align the text */
+    font-size: 1.75rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #fff; /* White text */
+}
+.project-imageender h3 {
+    position: absolute;
+    font-size: 1.85rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #fff; /* White text */
+    margin-top: 26rem; /* Space between image and title */
+    right: 4rem;
+}
+.project-titlemcts{
+    width: 35%; /* Image takes 50% of the width */
+    display: flex; /* Use flexbox to center text */
+    align-items: center; /* Vertically align the text */
+    justify-content: center; 
+    text-align: center; /* Center-align the text */
+    font-size: 1.75rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #fff; /* White text */
+}
+.project-imageaero h3 {
+    font-size: 1.85rem; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #1f1f1f; /* White text */
+    margin-top: 26.5rem; /* Space between image and title */
 }
 
+/*  Project Tile Stuff */
 .project-tile h3 a {
     text-decoration: none; /* No underline */
     color: inherit; /* Inherit parent color */
@@ -245,15 +414,32 @@ nav {
     color: inherit; /* Prevent color change on hover */
 }
 
-.project-tile:focus {
+.project-tile1:focus {
     text-decoration: none; /* Ensure no underline appears on focus */
     outline: none; /* Remove default focus outline */
 }
+.project-tile1 h3 a {
+    text-decoration: none; /* No underline */
+    color: inherit; /* Inherit parent color */
+}
 
-/* Carousel Animation */
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-200%); } /* Adjust for 20 images */
+.project-tile1 h3 a:hover {
+    text-decoration: none; /* Keep clean hover */
+}
+
+.project-tile1 {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Ensure text color is inherited */
+}
+
+.project-tile1:hover {
+    text-decoration: none; /* Ensure no underline appears on hover */
+    color: inherit; /* Prevent color change on hover */
+}
+
+.project-tile1:focus {
+    text-decoration: none; /* Ensure no underline appears on focus */
+    outline: none; /* Remove default focus outline */
 }
 
 
@@ -281,7 +467,6 @@ body.about-page header {
 body.projects-page header {
     background-image: url('images/brick.JPEG');
 }
-
 
 /* Section Styling */
 section {
@@ -324,6 +509,14 @@ section h2 {
     margin: 1rem 0; /* Add vertical spacing above and below */
 }
 
+.about-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: justify;
+    text-align-last: center;
+}
+
 .about-image {
     flex: 1;
     text-align: center;
@@ -341,7 +534,6 @@ section h2 {
     max-width: 100%;
     margin: 2rem auto;
     padding: 1rem;
-    text-align: center;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -351,12 +543,15 @@ section h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #333;
+    text-align: justify;
+    text-align-last: center;
 }
 
 .about-section p {
     font-size: 1.2rem;
     color: #555;
     line-height: 1.8;
+    
 }
 
 /* Relevant Coursework and Skills */
