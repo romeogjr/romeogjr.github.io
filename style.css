@@ -16,11 +16,6 @@ h1, h2, h3 {
 
 a {
     text-decoration: none;
-    color: #007acc;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 /* Navigation Bar */
@@ -30,7 +25,7 @@ nav {
     align-items: center;
     padding: 1rem 3rem; /* Increase padding for more space around the nav */
     background-color: #fff; /* Adjust background as needed */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
 }
 
 /* Navigation Logo */
@@ -51,7 +46,7 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #555; /* Link color */
     transition: color 0.3s ease;
 }
@@ -65,15 +60,16 @@ nav {
 #carousel {
     overflow: hidden; /* Hides any content outside the container */
     max-width: 100%;
-    height: 320px; /* Adjust the height to fit your images */
+    height:22rem; /* Adjust the height to fit your images */
     margin-bottom: 2rem;
+    margin-top: 2rem;
     position: relative;
 }
 
 .carousel-container {
     display: flex;
     animation: scroll linear infinite;
-    width: calc(330px * 20); /* Total width = image width * number of images */
+    width: calc(22rem * 20); /* Total width = image width * number of images */
     gap: 0; /* No gap between images */
     white-space: nowrap;
     overflow: hidden;
@@ -84,11 +80,9 @@ nav {
     animation-play-state: paused; /* Pause the animation */
 }
 .carousel-image {
-    width: 350px; /* Image width */
-    height: 370px; /* Image height */
+    width: 22rem; /* Image width */
+    height: 22rem; /* Image height */
     object-fit: cover; /* Keeps the images proportional */
-    flex-shrink: 0; /* Prevents images from shrinking */
-    flex: 0 0 auto;
 }
 
 /* Carousel Animation */
@@ -103,7 +97,7 @@ nav {
     text-align: center;
     margin: 2rem auto;
     padding: 0 1rem;
-    max-width: 800px;
+    max-width: 60rem;
 }
 
 #intro h2 {
@@ -124,8 +118,8 @@ nav {
     margin: 3rem auto;
     padding: 2rem 1rem;
     background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 2rem;
+    outline: 0.1rem solid rgba(0, 0, 0, 0.05); /* Subtle outline */
 }
 
 #featured-projects h2 {
@@ -145,27 +139,9 @@ nav {
 }
 .project-tile {
     width: 100%; /* Full grid column width */
-    height: 400px; /* Consistent fixed height */
-    border-radius: 15px; /* Rounded corners */
+    height: 25rem; /* Consistent fixed height */
+    border-radius: 3rem; /* Rounded corners */
     background-color: #1a1a1a; /* Near-black fallback background */
-    box-shadow: 0 4px 10px #0000001a; /* Subtle shadow */
-    text-decoration: none; /* No underline */
-    color: inherit; /* Inherit text color */
-    position: relative; /* Precise positioning for children */
-    overflow: hidden; /* Clip overflowing content */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center content */
-}
-.project-tile1 {
-    width: 100%; /* Full grid column width */
-    height: 400px; /* Consistent fixed height */
-    border-radius: 15px; /* Rounded corners */
-    background-color: #8181813a; /* Near-black fallback background */
-    box-shadow: 0 4px 10px #0000001a; /* Subtle shadow */
-    text-decoration: none; /* No underline */
-    color: inherit; /* Inherit text color */
     position: relative; /* Precise positioning for children */
     overflow: hidden; /* Clip overflowing content */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
@@ -175,311 +151,23 @@ nav {
 }
 
 .project-tile:hover {
-    transform: translateY(-5px); /* Subtle upward motion */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
-    text-decoration: none; /* Keep hover clean */
+    transform: translateY(-1rem); /* Subtle upward motion */
 }
 .project-tile1:hover {
-    transform: translateY(-5px); /* Subtle upward motion */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
-    text-decoration: none; /* Keep hover clean */
+    transform: translateY(-1rem); /* Subtle upward motion */
 }
 
-/* Project Images */
-.project-imagespa {
-    clip-path: inset(0% 10% 0% 2%); /* Crop top, right, bottom, left */
-    width: 80%; /* Image takes 50% of the width */
+.project-image {
+    width: 100%; /* Image takes 50% of the width */
     height: 100%; /* Full height of the tile */
     background-size: cover; /* Ensure the image covers its container */
     background-position: center; /* Center the image */
-    justify-content: right; /* Align text to the left */
 }
-.project-imageatlas { 
-    background-size: cover;
-    background-position: center;
-    width: 130%;
-    height: 110%;
-}
-.project-imageice {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-}
-.project-imagemecha {
-    width: 75%; /* Image takes 50% of the width */
-    height: 100%; /* Full height of the tile */
-    background-size: cover; /* Ensure the image covers its container */
-    background-position: center; /* Center the image */
-    justify-content: right; /* Align text to the left */
-    margin-left: -100px; 
-}
-.project-imageslide {
-    width: 45%; /* Image takes 50% of the width */
-    height: 22.8rem; /* Full height of the tile */
-    background-size: cover; /* Ensure the image covers its container */
-    background-position: center; /* Center the image */
-    justify-content: right; /* Align text to the left */
-}
-.project-imagebottle {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 110%;
-}
-.project-imageshoe {
-    background-size: cover;
-    background-position: center;
-    width: 110%;
-    height: 120%;
-    transform: translateY(-20px);
-}
-.project-imagebanana { 
-    background-size: cover;
-    background-position: center;
-    width: 80%;
-    height: 90%;
-}
-.project-imageender {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 130%;
-    transform: translateY(-30px);
-}
-.project-imagehome {
-    width: 51%; /* Image takes 50% of the width */
-    height: 355px; /* Full height of the tile */
-    background-size: cover; /* Ensure the image covers its container */
-}
-.project-imagevib {
-    width: 51%; /* Image takes 50% of the width */
-    height: 390px; /* Full height of the tile */
-    background-size: cover; /* Ensure the image covers its container */
-}
-.project-imagemcts {
-    clip-path: inset(0% 0.5% 0% 1%); /* Crop top, right, bottom, left */
-    width: 70%; /* Image takes 50% of the width */
-    height: 83%; /* Full height of the tile */
-    background-size: cover; /* Ensure the image covers its container */
-    border-radius: 1.75rem; /* Rounded corners */
-}
-.project-imageauto {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-}
-.project-imagelube {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 130%;
-    transform: translateY(-30px);
-}
-.project-imageaero {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 130%;
-    transform: translateY(-30px);
-}
-
-
-/* Project Titles */
-.project-titlespa{
-    display: flex; /* Use flexbox to center text */
-    align-items: center; /* Vertically align the text */
-    justify-content: left; /* Align text to the left */
-    text-align: left; /* Center-align the text */
-    font-size: 2rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-    margin-left: -50px;
-}
-.project-imageatlas h3 {
-    position: absolute; /* Absolute positioning to place the title */
-    top: 50%; /* Center vertically */
-    right: 7rem; /* 1rem from the right */
-    transform: translateY(-50%); /* Adjust for exact vertical centering */
-    font-size: 2.5rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-    margin: 0; /* Remove default margin */
-    text-align: right; /* Align text to the right */
-}
-.project-imageice h3 {
-    font-size: 2.25rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-    text-align: center; /* Center-align the text */
-    margin-top: 2rem; /* Space between image and title */
-}
-.project-imageice h3 {
-    font-size: 2.25rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-    text-align: center; /* Center-align the text */
-    margin-top: 2rem; /* Space between image and title */
-}
-.project-titlemecha{
-    width: 34%; /* Image takes 50% of the width */
-    display: flex; /* Use flexbox to center text */
-    align-items: center; /* Vertically align the text */
-    justify-content: right; 
-    text-align: right; /* Center-align the text */
-    font-size: 1.75rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-}
-.project-titleslide{
-    width: 25%; /* Image takes 50% of the width */
-    display: flex; /* Use flexbox to center text */
-    align-items: center; /* Vertically align the text */
-    justify-content: center; 
-    text-align: center; /* Center-align the text */
-    font-size: 2rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-    margin-left: 50px;
-}
-.project-imagebottle h3 {
-    font-size: 2.25rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #333; /* White text */
-    text-align: center; /* Center-align the text */
-    margin-top: 2.5rem; /* Space between image and title */
-}
-.project-imageshoe h3 {
-    position: absolute;
-    font-size: 1.85rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #1f1f1f; /* White text */
-    margin-top: 23.5rem; /* Space between image and title */
-    left: 1.6rem;
-}
-.project-titlebanana{
-    width: 30%; /* Image takes 50% of the width */
-    display: flex; /* Use flexbox to center text */
-    align-items: center; /* Vertically align the text */
-    justify-content: center; 
-    text-align: center; /* Center-align the text */
-    font-size: 1.75rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #333; /* White text */
-    margin-left: 10px;
-    padding-right: 1.75rem;
-}
-.project-titlehome{
-    width: 45%; /* Image takes 50% of the width */
-    display: flex; /* Use flexbox to center text */
-    align-items: center; /* Vertically align the text */
-    justify-content: center; 
-    text-align: center; /* Center-align the text */
-    font-size: 1.75rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-}
-.project-titlevib{
-    width: 45%; /* Image takes 50% of the width */
-    display: flex; /* Use flexbox to center text */
-    align-items: center; /* Vertically align the text */
-    justify-content: center; 
-    text-align: center; /* Center-align the text */
-    font-size: 1.75rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-}
-.project-imageender h3 {
-    position: absolute;
-    font-size: 1.85rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-    margin-top: 26rem; /* Space between image and title */
-    right: 4rem;
-}
-.project-titlemcts{
-    width: 35%; /* Image takes 50% of the width */
-    display: flex; /* Use flexbox to center text */
-    align-items: center; /* Vertically align the text */
-    justify-content: center; 
-    text-align: center; /* Center-align the text */
-    font-size: 1.75rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-}
-.project-imageauto h3 {
-    font-size: 1.85rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-    margin-top: 1rem; /* Space between image and title */
-}
-.project-imagelube h3 {
-    font-size: 1.85rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #fff; /* White text */
-    margin-top: 26.5rem; /* Space between image and title */
-}
-.project-imageaero h3 {
-    font-size: 1.85rem; /* Title font size */
-    font-weight: 600; /* Bold title */
-    color: #1f1f1f; /* White text */
-    margin-top: 26.5rem; /* Space between image and title */
-}
-
-/*  Project Tile Stuff */
-.project-tile h3 a {
-    text-decoration: none; /* No underline */
-    color: inherit; /* Inherit parent color */
-}
-
-.project-tile h3 a:hover {
-    text-decoration: none; /* Keep clean hover */
-}
-
-.project-tile {
-    text-decoration: none; /* Remove underline from the link */
-    color: inherit; /* Ensure text color is inherited */
-}
-
-.project-tile:hover {
-    text-decoration: none; /* Ensure no underline appears on hover */
-    color: inherit; /* Prevent color change on hover */
-}
-
-.project-tile1:focus {
-    text-decoration: none; /* Ensure no underline appears on focus */
-    outline: none; /* Remove default focus outline */
-}
-.project-tile1 h3 a {
-    text-decoration: none; /* No underline */
-    color: inherit; /* Inherit parent color */
-}
-
-.project-tile1 h3 a:hover {
-    text-decoration: none; /* Keep clean hover */
-}
-
-.project-tile1 {
-    text-decoration: none; /* Remove underline from the link */
-    color: inherit; /* Ensure text color is inherited */
-}
-
-.project-tile1:hover {
-    text-decoration: none; /* Ensure no underline appears on hover */
-    color: inherit; /* Prevent color change on hover */
-}
-
-.project-tile1:focus {
-    text-decoration: none; /* Ensure no underline appears on focus */
-    outline: none; /* Remove default focus outline */
-}
-
 
 
 /* Header Styling */
 header {
-    height: 350px;
+    height: 21rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -503,7 +191,7 @@ body.projects-page header {
 
 /* Section Styling */
 section {
-    max-width: 1300px;
+    max-width: 80rem;
     margin: 2rem auto;
     padding: 1rem;
     font-size: 1rem;
@@ -511,8 +199,7 @@ section {
 
 section h2 {
     font-size: 1.5rem;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #ddd;
     margin-bottom: 1rem;
     color: #333;
 }
@@ -523,10 +210,9 @@ section h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 4.5rem;
     flex-wrap: wrap;
     max-width: 100%;
-    margin: 2rem auto;
     padding: 1rem;
 }
 
@@ -536,10 +222,10 @@ section h2 {
     line-height: 1.8;
     color: #555;
     background-color: #f9f9f9; /* Light gray background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    border-radius: 1rem; /* Rounded corners */
     padding: 1.5rem; /* Add padding inside the box */
-    margin: 1rem 0; /* Add vertical spacing above and below */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
+    border: 0.08rem solid #ddd;
 }
 
 .about-text h2 {
@@ -552,24 +238,21 @@ section h2 {
 
 .about-image {
     flex: 1;
-    text-align: center;
 }
 
 .about-image img {
     width: 100%;
-    max-width: 370px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
 }
 
-/* Section Styles */
 .about-section {
     max-width: 100%;
-    margin: 2rem auto;
-    padding: 1rem;
+    margin: 3rem auto;
     background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
+    padding: 1.5rem; /* Add padding inside the box */
+    border-radius: 1rem;
+    border: 0.08rem solid #ddd;
 }
 
 .about-section h2 {
@@ -594,18 +277,19 @@ section h2 {
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Align content vertically */
     gap: 2rem; /* Add spacing between the columns */
-    max-width: 1200px; /* Restrict the overall width */
+    max-width: 120rem; /* Restrict the overall width */
     margin: 2rem auto; /* Center the container on the page */
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
     text-align: center; /* Center text inside the container */
+    border: 0.08rem solid #ddd;
 }
 
 .coursework, .skills {
     flex: 1; /* Allow equal width for both columns */
-    min-width: 300px; /* Ensure columns don't shrink too small */
+    min-width: 30rem; /* Ensure columns don't shrink too small */
     text-align: center; /* Center the text content inside */
 }
 
@@ -619,7 +303,6 @@ section h2 {
     list-style-type: disc; /* Keep the bullets */
     list-style-position: inside; /* Ensure bullets are aligned with text */
     text-align: center; /* Center both the bullets and the text */
-    padding: 0; /* Remove any additional padding */
     margin: 0 auto; /* Center the entire list horizontally */
     display: inline-block; /* Makes the list behave like inline content for proper centering */
     color: #555;
@@ -632,7 +315,7 @@ section h2 {
 
 /* Projects Section */
 #intro2 {
-    max-width: 800px; /* Restrict paragraph width */
+    max-width: 50rem; /* Restrict paragraph width */
     margin: 2rem auto; /* Center it horizontally and add spacing */
     padding: 1rem;
     text-align: center; /* Center-align the text */
@@ -644,17 +327,17 @@ section h2 {
 #projects-list {
     max-width: 70%; /* Increased overall width to use more screen space */
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 /* Each Project Container */
 .project {
     margin-bottom: 3rem; /* Vertical spacing between projects */
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 0.1rem solid #ddd;
+    border-radius: 3rem;
     padding: 2rem; /* Padding inside each project block */
     background-color: #f9f9f9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for focus */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); /* Enhanced shadow for focus */
 }
 
 /* Project Header: Info and Image Side by Side */
@@ -669,7 +352,7 @@ section h2 {
 /* Project Info */
 .project-info {
     flex: 1; /* Allow the text to take more space proportionally */
-    min-width: 350px; /* Ensure the text has enough space */
+    min-width: 30rem; /* Ensure the text has enough space */
 }
 
 .project-info h2 {
@@ -680,60 +363,56 @@ section h2 {
 .project-info p {
     font-size: 1.3rem; /* Larger paragraph font size */
     color: #555;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .project-image1 {
-    width: 370px; /* Increased size for larger images */
-    height: 400px;
-    background-color: #1a1a1a; /* Near-black fallback background */
-    border-radius: 20%; /* Circular shape */
+    width: 23.5rem; /* Increased size for larger images */
+    height: 24.5rem;
+    background-color: #f9f9f9; /* Near-black fallback background */
+    border-radius: 3rem; /* Circular shape */
     object-fit: cover; /* Maintain aspect ratio */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
     flex-shrink: 0; /* Prevent image shrinking */
 }
 
 /* Dropdown Button */
 .dropdown-btn {
     display: inline-block;
-    padding: 0.75rem 1.5rem; /* Larger button size */
-    background-color: #355E3B; /* Hunter green */
-    color: #fff; /* White text */
+    padding: 1rem 1.5rem; 
+    background-color: #355E3B; 
+    color: #fff; 
     font-size: 1.2rem;
     font-weight: 600;
     border: none;
-    border-radius: 4px;
+    border-radius: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 .dropdown-btn:hover {
-    background-color: #2A4730; /* Darker hunter green */
+    background-color: #2A4730; 
 }
 
 .dropdown-content {
-    display: block; /* Ensures max-height transitions work */
-    margin-top: 0; /* Collapsed margin */
-    padding: 0; /* Remove padding initially to hide the content */
-    border-top: none; /* Hide the border initially */
+    display: block; 
     background-color: #fff;
-    margin: 0;
+    border-radius: 2rem; /* Optional: Rounded corners */
     overflow: hidden;
     max-height: 0; /* Fully collapsed */
-    overflow: hidden; /* Prevent content overflow */
     transition: max-height 0.3s ease-in-out, padding 0.3s ease, margin 0.3s ease, border 0.3s ease; /* Smooth transitions */
 }
 
 .dropdown-content.show {
-    max-height: 700px; /* Adjust this value based on your content height */
+    max-height: 45rem; /* Adjust this value based on your content height */
     margin-top: 1.5rem; /* Restore margin */
     padding: 1.5rem; /* Restore padding */
-    border-top: 1px solid #ddd; /* Restore border */
+    border: 0.05rem solid #ddd; /* Restore border */
 }
 
 .dropdown-content h3 {
-    font-size: 1.4rem; /* Slightly larger subheading */
-    margin-bottom: 1rem;
+    font-size: 1.3rem; /* Slightly larger subheading */
+    margin-bottom: 0.8rem;
 }
 
 .dropdown-content ul {
@@ -755,29 +434,28 @@ section h2 {
 }
 
 .dropdown-image {
-    width: 300px; /* Adjust image width */
-    height:300px; /* Adjust image height */
-    object-fit: cover; /* Ensure images maintain their aspect ratio */
-    border-radius: 8px; /* Optional: Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for better appearance */
+    width: 20rem; /* Adjust image width */
+    height: 21rem; /* Adjust image height */
+    object-fit: cover;
+    border-radius: 1rem; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
 }
 
 /* Resume Section */
 #resume {
-    text-align: center; /* Center the entire section */
+    text-align: center; 
     max-width: 70rem;
     margin: 3rem auto;
     padding: 2rem 1rem;
     background-color: #f9f9f9;
-    border-radius: 8px;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    border-radius: 3rem;
 }
 
 .resume-container {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center-align the content */
-    gap: 2rem; /* Space between the download link and the image */
+    gap: 2rem;
 }
 
 /* Download Button */
@@ -789,7 +467,7 @@ section h2 {
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 1rem;
     transition: background 0.3s ease;
 }
 
@@ -799,25 +477,26 @@ section h2 {
 
 /* Resume Image Placeholder */
 .resume-image img {
-    width: 100%; /* Make the image responsive */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around image */
+    width: 100%; 
+    border-radius: 2rem; 
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); /* Subtle shadow around image */
 }
 
 /* Contact Section */
 #contact {
     text-align: center; /* Center-align text content */
-    max-width: 700px; /* Restrict the width */
-    margin: 3rem auto; /* Center the section horizontally and add vertical spacing */
+    max-width: 45rem; /* Restrict the width */
+    margin: 3.5rem auto; /* Center the section horizontally and add vertical spacing */
     padding: 2rem 1rem; /* Add padding inside the section */
     background-color: #f9f9f9; /* Light gray background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    border-radius: 2rem; /* Rounded corners */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    border: 0.03rem solid #ddd;
 }
 
 /* Contact Title and Description */
 .contact-container h2 {
-    font-size: 2rem; /* Larger title font */
+    font-size: 2rem; 
     margin-bottom: 1rem;
     color: #333;
 }
@@ -832,16 +511,17 @@ section h2 {
 /* Contact Form */
 .contact-form {
     display: flex;
-    flex-direction: column; /* Stack form fields vertically */
-    gap: 1.5rem; /* Add space between form elements */
-    align-items: center; /* Center the form fields horizontally */
+    flex-direction: column; 
+    gap: 1.5rem; 
+    align-items: center; 
+    padding: 1rem 1rem; 
 }
 
 .form-group {
     width: 100%;
-    max-width: 500px; /* Restrict the width for better readability */
+    max-width: 50rem; 
     display: flex;
-    flex-direction: column; /* Stack label and input */
+    flex-direction: column; 
     text-align: left;
 }
 
@@ -855,28 +535,22 @@ section h2 {
 .form-group textarea {
     padding: 0.75rem;
     font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 100%; /* Full width of the container */
+    border: 0.01rem solid #ddd;
+    border-radius: 0.5rem;
     background-color: #fff;
     color: #333;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+    box-shadow: inset 0 0.01rem 0.5rem rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
     box-sizing: border-box; /* Includes padding in width/height calculations */
-}
-
-.form-group textarea {
-    resize: vertical; /* Allow vertical resizing only */
 }
 
 /* Style only the message textarea */
 #message {
-    height: 175px; /* Adjust height for the message box */
+    height: 15rem; /* Adjust height for the message box */
     resize: vertical; /* Allow users to resize it vertically if needed */
-    font-size: 1rem; /* Ensure consistent font size */
-    border: 1px solid #ddd; /* Optional: Border styling */
-    border-radius: 4px; /* Optional: Rounded corners */
-    width: 100%; /* Ensure it spans the width of the form */
+    border: 0.01rem solid #ddd; /* Optional: Border styling */
+    border-radius: 0.5rem; /* Optional: Rounded corners */
     box-sizing: border-box; /* Includes padding in width/height calculations */
+    margin-bottom: 1.5rem;
 }
 
 /* Submit Button */
@@ -884,12 +558,12 @@ section h2 {
     padding: 0.75rem 2rem;
     background-color: #355E3B;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    border: none;
-    border-radius: 4px;
+    border-radius: 2rem;
     cursor: pointer;
     transition: background 0.3s ease;
+    border:none;
 }
 
 .btn-submit:hover {
@@ -902,8 +576,10 @@ footer {
     padding: 1rem;
     font-size: 0.9rem;
     color: #666;
-    border-top: 1px solid #ddd;
+    border-top: 0.02rem solid #ddd;
     background-color: #f9f9f9;
     margin-top: 2rem;
 }
+
+
 
