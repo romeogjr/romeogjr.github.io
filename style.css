@@ -632,7 +632,7 @@ footer {
     }
 
     .project-tile {
-        height: 20rem;
+        width: 33rem;
     }
     .project-info {
         min-width: auto;
