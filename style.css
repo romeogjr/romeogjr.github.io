@@ -7,6 +7,7 @@ body {
     background-color: #fff;
     line-height: 1.8;
     box-sizing: border-box;
+    overflow-y: visible;
 }
 
 h1, h2, h3 {
@@ -545,11 +546,11 @@ section h2 {
 
 /* Style only the message textarea */
 #message {
-    height: 15rem; /* Adjust height for the message box */
-    resize: vertical; /* Allow users to resize it vertically if needed */
-    border: 0.01rem solid #ddd; /* Optional: Border styling */
-    border-radius: 0.5rem; /* Optional: Rounded corners */
-    box-sizing: border-box; /* Includes padding in width/height calculations */
+    height: 15rem; 
+    resize: vertical; 
+    border: 0.01rem solid #ddd; 
+    border-radius: 0.5rem; 
+    box-sizing: border-box; 
     margin-bottom: 1.5rem;
 }
 
@@ -583,3 +584,116 @@ footer {
 
 
 
+
+
+
+/* Smaller Screens */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-left: 0;
+        gap: 1rem;
+    }
+
+    #intro h2 {
+        font-size: 1.8rem;
+    }
+
+    #intro p {
+        font-size: 1rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr
+    }
+
+    #carousel {
+        height: 15rem;
+    }
+
+    .carousel-image {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .project-tile {
+        height: 20rem;
+    }
+    .project-info {
+        min-width: auto;
+        text-align: center;
+    }
+
+    .project-info h2 {
+        font-size: 1.3rem; /* Smaller title font for tablets */
+    }
+
+    .project-info p {
+        font-size: 1rem; /* Smaller paragraph font */
+    }
+
+    .project-image1 {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem; /* Reduced border radius for smaller screens */
+    }
+
+    .dropdown-images {
+        flex-wrap: wrap; /* Wrap images for better alignment */
+    }
+
+    .dropdown-image {
+        width: 15rem; /* Adjust image size for tablets */
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        font-size: 1.8rem;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    #intro h2 {
+        font-size: 1.5rem;
+    }
+
+    #intro p {
+        font-size: 0.9rem;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+    }
+
+    #featured-projects h2 {
+        font-size: 1.5rem;
+    }
+
+    .projects-container {
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .project-tile {
+        height: 18rem;
+    }
+}
