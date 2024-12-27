@@ -664,12 +664,28 @@ footer {
 }
 
 @media (max-width: 480px) {
+    /* General Adjustments */
+    body {
+        font-size: 14px; /* Slightly smaller base font size for smaller screens */
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem;
+    }
+
     .nav-logo {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Smaller logo font size */
+    }
+
+    .nav-links {
+        gap: 1rem; /* Reduce spacing between nav links */
+        margin-left: 0;
     }
 
     .nav-links a {
-        font-size: 1.2rem;
+        font-size: 1rem; /* Smaller font for nav links */
     }
 
     #intro h2 {
@@ -680,20 +696,135 @@ footer {
         font-size: 0.9rem;
     }
 
-    .about-text {
-        font-size: 0.9rem;
+    #carousel {
+        height: 15rem; /* Reduce carousel height */
     }
 
+    .carousel-image {
+        width: 15rem;
+        height: 15rem; /* Smaller carousel image dimensions */
+    }
+
+    /* Project Info */
+    .projects-container {
+        grid-template-columns: 1fr; /* Stack tiles vertically */
+    }
+
+    .project-tile {
+        padding: 0.75rem;
+        overflow: visible; /* Ensure dropdowns are not clipped */
+    }
+
+    .project-info h2 {
+        font-size: 1.2rem; /* Smaller title font */
+    }
+
+    .project-info p {
+        font-size: 0.85rem; /* Smaller paragraph font */
+    }
+
+    .project-image1 {
+        width: 100%; /* Ensure images span full width */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 0.8rem; /* Smaller border radius */
+        margin-bottom: 1rem; /* Add spacing below the image */
+    }
+
+    /* Dropdown Menu */
+    .dropdown-btn {
+        font-size: 1rem; /* Smaller button font size */
+        padding: 0.5rem 1rem; /* Reduce padding */
+    }
+
+    .dropdown-content {
+        max-height: none; /* Allow the dropdown to expand fully */
+        padding: 1rem; /* Adjust padding for smaller screens */
+        margin-top: 1rem;
+        border: 0.05rem solid #ddd;
+        border-radius: 1rem; /* Slightly smaller border radius */
+        z-index: 10; /* Ensure dropdown appears above other content */
+        overflow: visible; /* Prevent clipping */
+    }
+
+    .dropdown-content.show {
+        max-height: 45rem; /* Expand dropdown to fit content */
+    }
+
+    .dropdown-content h3 {
+        font-size: 1.1rem; /* Slightly smaller subheading font size */
+    }
+
+    .dropdown-content p, .dropdown-content ul {
+        font-size: 0.85rem; /* Reduce font size for dropdown text */
+        margin: 0.5rem 0; /* Reduce spacing */
+    }
+
+    .dropdown-images {
+        flex-wrap: wrap; /* Allow images to wrap for better layout */
+        justify-content: center; /* Center-align images */
+        gap: 0.5rem; /* Reduce gap between images */
+    }
+
+    .dropdown-image {
+        width: 100%; /* Use full width for images */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 0.5rem; /* Smaller border radius */
+        margin-bottom: 1rem; /* Add spacing below images */
+    }
+
+    /* About Section */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.5rem; /* Reduce padding */
+    }
+
+    .about-text {
+        font-size: 0.9rem; /* Smaller font size for text */
+        padding: 1rem; /* Reduce padding */
+    }
+
+    .about-image img {
+        width: 100%; /* Full width for images */
+        border-radius: 1rem; /* Smaller border radius */
+    }
+
+    /* Featured Projects Section */
     #featured-projects h2 {
         font-size: 1.5rem;
     }
 
-    .projects-container {
-        gap: 1rem;
-        grid-template-columns: 1fr;
+    /* Contact Section */
+    #contact {
+        max-width: 100%; /* Full width for contact section */
+        padding: 1rem;
     }
 
-    .project-tile {
-        height: 18rem;
+    .contact-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-container p {
+        font-size: 0.85rem; /* Smaller font size for contact text */
+    }
+
+    .contact-form {
+        gap: 1rem; /* Reduce spacing between form fields */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem; /* Smaller font size for inputs */
+    }
+
+    .btn-submit {
+        padding: 0.5rem 1rem; /* Reduce button padding */
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.8rem; /* Smaller footer font size */
+        padding: 0.5rem;
     }
 }
